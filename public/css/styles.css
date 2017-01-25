@@ -1,0 +1,17 @@
+.colored{
+	background: red;
+	
+}
+
+span{
+	border-radius: 50%;
+	width: 3px;
+	height: 3px;
+	display: inline-block;
+}
+
+td{
+	padding: 20px;
+	cursor: pointer;
+	border: 1px solid black;
+}

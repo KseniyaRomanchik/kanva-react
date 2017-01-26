@@ -1,9 +1,8 @@
 export default class GameFieldService {
 	
-	static setField(width, height) {
+	static setField(width, height, step) {
 
 		let dots = {},
-			step = 10,
 			widthPixels = width * step;
 			// heightPixels = height * step;
 

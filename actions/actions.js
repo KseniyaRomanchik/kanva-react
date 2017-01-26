@@ -28,9 +28,9 @@ function setFieldAction(fieldData) {
 	}
 }
 
-export function setFieldSize(width, height) {
+export function setFieldSize(width, height, step) {
 
-	let dots = GameFieldService.setField(width, height);
+	let dots = GameFieldService.setField(width, height, step);
 
 	return (dispatch) => {
 
@@ -39,7 +39,8 @@ export function setFieldSize(width, height) {
 			size: {
 				width,
 				height
-			}
+			},
+			step: step
 		}));
 	}
 }

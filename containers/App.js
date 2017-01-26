@@ -9,9 +9,9 @@ class App extends Component{
 
 		return (
 			<div>
-				<GameFieldContainer />{/ <form choose size> -- container/}
-				<LoadingAreaContainer />{/ <gameField> -- container/}
-				<SizeFormContainer />{/ <textarea for json> -- container/}
+				<GameFieldContainer /> {/* <form choose size> -- container*/}
+				<LoadingAreaContainer /> {/* <gameField> -- container*/}
+				<SizeFormContainer /> {/* <textarea for json> -- container*/}
 			</div>
 		)
 	}

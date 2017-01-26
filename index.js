@@ -86,7 +86,7 @@ import App from "./containers/App"
 
 import * as actions from "./actions/actions"
 
-store.dispatch(actions.setDots(10, 8)); //init
+store.dispatch(actions.setFieldSize(10, 10)); //init
 
 render(
 	<Provider store={ store }>

@@ -1,24 +1,40 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
+import * as actions from "../actions/actions";
+import { connect } from "react-redux";
 
-export default class LoadingAreaContainer extends Component{
+class LoadingAreaContainer extends Component{
+
+	constructor(props) {
+		super(props)
+		// width
+		// height			
+	}
 
 	render(){
 
-		constructor(props) {
-			super(props);
-			// width
-			// height			
-		}
+		
 
 		// changeSizeInStoreEvent(){}
 
 
 		return (
 			<div>
-				{/ form component /}
+				{/* form component */}
 			</div>
 		)
 	}
 }
+
+function mapStateToProps (state) {
+	
+	return {
+		size: state.dots.size,
+		dots: state.dots.dots
+	}
+}
+
+export default connect( mapStateToProps, {
+		loadStore: actions.loadStore
+	})(LoadingAreaContainer);
 
 // connect store

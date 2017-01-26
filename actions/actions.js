@@ -1,29 +1,40 @@
-import DotsService from "./../services/DotsService"
+import GameFieldService from "./../services/GameFieldService"
 import constants from "./../constants/DotsConstants"
 
-export function setDotState(dots) {
+export function loadStore(store) {
 
 	return {
-		type: constants.SET_DOT_STATE,
-		payload: dots
+		type: constants.LOAD_STORE,
+		payload: store
 	}
 }
 
-function setDotsAction(data) {
+export function setDotColor(key, dotObject) {
 
 	return {
-		type: constants.SET_DOTS,
-		payload: data	
+		type: constants.SET_DOT_COLOR,
+		payload: {
+			dot: dotObject,
+			id: key
+		}
 	}
 }
 
-export function setDots(width, height) {
+function setFieldAction(fieldData) {
+
+	return {
+		type: constants.SET_FIELD_SIZE,
+		payload: fieldData	
+	}
+}
+
+export function setFieldSize(width, height) {
+
+	let dots = GameFieldService.setField(width, height);
 
 	return (dispatch) => {
-		
-		let dots = DotsService.createDots(width, height);
 
-		dispatch(setDotsAction({
+		dispatch(setFieldAction({
 			dots: dots,
 			size: {
 				width,
@@ -32,3 +43,8 @@ export function setDots(width, height) {
 		}));
 	}
 }
+
+// refresh store with loading json
+// create polys
+// change dot color
+// change gamefield size

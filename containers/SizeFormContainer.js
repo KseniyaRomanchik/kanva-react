@@ -1,22 +1,36 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
+import * as actions from "../actions/actions";
+import { connect } from "react-redux";
 
-export default class SizeFormContainer extends Component{
+class SizeFormContainer extends Component{
+
+	constructor(props) {
+		super(props);
+					
+	}
 
 	render(){
-
-		constructor(props) {
-			super(props);
-						
-		}
 
 		// refreshStoreEvent{}
 
 		return (
 			<div>
-				{/ textareaComponent /}
+				{/* textareaComponent */}
 			</div>
 		)
 	}
 }
+
+function mapStateToProps (state) {
+	
+	return {
+		size: state.dots.size
+	}
+}
+
+export default connect( mapStateToProps, {
+		setFieldSize: actions.setFieldSize
+	})(SizeFormContainer);
+
 
 // connect store

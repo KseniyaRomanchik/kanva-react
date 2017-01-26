@@ -1,6 +1,6 @@
 import { combineReducers } from "redux"
-import dots from "./dots"
+import dots from "./fieldState";
 
 export default combineReducers({
 	dots
-})
+});

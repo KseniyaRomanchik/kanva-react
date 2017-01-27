@@ -13,9 +13,7 @@ export default function fieldState(state = initialState, action) {
 	switch (action.type) {
 		case constants.SET_NEW_DOT_PROPERTY: {
 			
-			state.dots[action.payload.id] = action.payload.dot;
-
-			return Object.assign({}, state);
+			return Object.assign({}, state, action.payload);
 		}
 
 		case constants.SET_FIELD_SIZE: {

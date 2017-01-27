@@ -24,10 +24,7 @@ export default class Polygons extends Component{
 
 		if( "color" in checkDot ){
 
-			let dots = this.props.dots
-
-			// if(checkDot)
-
+			let dots = this.props.dots;
 			let dotsAroundChecked = [
 				dots[`id-${checkDot.x - this.step}-${checkDot.y + this.step}`],
 				dots[`id-${checkDot.x}-${checkDot.y + this.step}`],
@@ -39,12 +36,7 @@ export default class Polygons extends Component{
 				dots[`id-${checkDot.x - this.step}-${checkDot.y}`]
 			];
 
-			// this.coordinatesLine.push(this.props.clickedDot.x)
-			// this.coordinatesLine.push(this.props.clickedDot.y)
-				
-			// check dots around
-
-			console.log(dotsAroundChecked);
+			// console.log(dotsAroundChecked);
 
 			dotsAroundChecked = dotsAroundChecked.filter((it) => { 
 
@@ -57,9 +49,12 @@ export default class Polygons extends Component{
 
 					return true
 				}            
-			})
+			});
+
 			dotsAroundChecked
-			console.log(dotsAroundChecked);
+
+			// console.log(dotsAroundChecked);
+
 			return this.coordinatesLine
 		}
 		else{
@@ -69,14 +64,10 @@ export default class Polygons extends Component{
 
 	render(){
 
+		console.log("jj")
+
 		let coordin = this.checkClosedPoly(this.props.clickedDot);
 		let colorLine = this.player ? "red" : "blue"
-
-		// console.log(coordin,colorLine)
-
-		// let polygonsView = ("color" in this.props.clickedDot) ? this.checkClosedPoly(this.props.checkedDot) : <Line /> ;
-
-		// console.log("color" in this.props.clickedDot)
 
 		// let polygonsView = this.props.polygons.map((ind, it) => {
 

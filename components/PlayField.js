@@ -16,27 +16,21 @@ export default class PlayField extends Component {
 
 		let id = `id-${e.target.attrs.x}-${e.target.attrs.y}`;
 
-		if(this.props.dots[id].color == ""){
+		if(this.props.dots[id].color === ""){	
+			
+			let dots = this.props.dots;
 
-			let newDot = this.setColor(this.props.dots[id]);
-
+			dots[id].color = this.props.move;
 			this.props.setPlayer({ move : this.props.move ? 0 : 1 });
-			this.props.setNewDotProperty(id, newDot);			
+			this.props.setNewDotProperty(dots);			
 			this.setState({ clickedDot : this.props.dots[id] })
 		}		
-	}
-
-	setColor(dotObj){
-
-		dotObj.color = this.props.move;
-		return dotObj;
 	}
 
 	render(){
 
 		let dots = [],
 			i = 0;
-
 		for( let I in this.props.dots){
 
 			i++
@@ -49,6 +43,8 @@ export default class PlayField extends Component {
 						onClick={ this.identyPlayer.bind(this) }
 				/>)
 		}
+
+		// console.log(this.props.dots)
 
 		return (
 			<div>

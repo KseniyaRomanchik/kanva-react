@@ -9,23 +9,21 @@ export function loadStore(store) {
 	}
 }
 
-export function setNewDotProperty(key, dotObject, move) {
+export function setNewDotProperty(dots) {
 
 	return {
 		type: constants.SET_NEW_DOT_PROPERTY,
 		payload: {
-			dot: dotObject,
-			id: key,
-			move: move
+			dots: dots
 		}
 	}
 }
 
-export function setPlayer(player) {
+export function setPlayer(move) {
 
 	return {
 		type: constants.SET_PLAYER,
-		payload: player
+		payload: move
 	}
 }
 

@@ -86,9 +86,9 @@ import App from "./containers/App"
 
 import * as actions from "./actions/actions"
 
-store.dispatch(actions.setFieldSize(10, 10, store.getState().step)); //init
+store.dispatch(actions.setFieldSize(20, 15)); //init
 
-console.log(store.getState().dots.step)
+// console.log(store.getState().dots)
 
 render(
 	<Provider store={ store }>

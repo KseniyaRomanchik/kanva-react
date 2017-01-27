@@ -1,17 +1,7 @@
-.colored{
-	background: red;
-	
+.player0{
+	color: rgba(0,0,255,1);
 }
 
-span{
-	border-radius: 50%;
-	width: 3px;
-	height: 3px;
-	display: inline-block;
-}
-
-td{
-	padding: 20px;
-	cursor: pointer;
-	border: 1px solid black;
+.player1{
+	color: rgba(255,0,0,1);
 }

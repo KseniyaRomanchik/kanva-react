@@ -9,14 +9,23 @@ export function loadStore(store) {
 	}
 }
 
-export function setDotColor(key, dotObject) {
+export function setNewDotProperty(key, dotObject, move) {
 
 	return {
-		type: constants.SET_DOT_COLOR,
+		type: constants.SET_NEW_DOT_PROPERTY,
 		payload: {
 			dot: dotObject,
-			id: key
+			id: key,
+			move: move
 		}
+	}
+}
+
+export function setPlayer(player) {
+
+	return {
+		type: constants.SET_PLAYER,
+		payload: player
 	}
 }
 
@@ -28,7 +37,7 @@ function setFieldAction(fieldData) {
 	}
 }
 
-export function setFieldSize(width, height, step) {
+export function setFieldSize(width, height, step = 25) {
 
 	let dots = GameFieldService.setField(width, height, step);
 
@@ -39,8 +48,7 @@ export function setFieldSize(width, height, step) {
 			size: {
 				width,
 				height
-			},
-			step: step
+			}
 		}));
 	}
 }

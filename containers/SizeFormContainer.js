@@ -6,7 +6,6 @@ class SizeFormContainer extends Component{
 
 	constructor(props) {
 		super(props);
-					
 	}
 
 	render(){

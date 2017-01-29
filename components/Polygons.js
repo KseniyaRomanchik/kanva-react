@@ -11,6 +11,9 @@ export default class Polygons extends Component{
 		this.step = this.props.step
 
 		this.coordinatesLine = []
+		this.dots = this.props.dots
+
+		this.i = 0
 
 		// let polygon = {
 		//     player: 1, // 1, 2
@@ -20,53 +23,105 @@ export default class Polygons extends Component{
 		// }
 	}
 
-	checkClosedPoly(checkDot){
+	markClosestDot(dot){
 
-		if( "color" in checkDot ){
+		// console.log(dot)
 
-			let dots = this.props.dots;
-			let dotsAroundChecked = [
-				dots[`id-${checkDot.x - this.step}-${checkDot.y + this.step}`],
-				dots[`id-${checkDot.x}-${checkDot.y + this.step}`],
-				dots[`id-${checkDot.x + this.step}-${checkDot.y + this.step}`],
-				dots[`id-${checkDot.x + this.step}-${checkDot.y}`],
-				dots[`id-${checkDot.x + this.step}-${checkDot.y - this.step}`],
-				dots[`id-${checkDot.x}-${checkDot.y - this.step}`],
-				dots[`id-${checkDot.x - this.step}-${checkDot.y - this.step}`],
-				dots[`id-${checkDot.x - this.step}-${checkDot.y}`]
-			];
+		let dots = this.props.dots;
+		let dotsAroundChecked = [
+			dots[`id-${dot.x - this.step}-${dot.y + this.step}`],
+			dots[`id-${dot.x}-${dot.y + this.step}`],
+			dots[`id-${dot.x + this.step}-${dot.y + this.step}`],
+			dots[`id-${dot.x + this.step}-${dot.y}`],
+			dots[`id-${dot.x + this.step}-${dot.y - this.step}`],
+			dots[`id-${dot.x}-${dot.y - this.step}`],
+			dots[`id-${dot.x - this.step}-${dot.y - this.step}`],
+			dots[`id-${dot.x - this.step}-${dot.y}`]
+		];
 
-			// console.log(dotsAroundChecked);
+		// console.log(dotsAroundChecked);
 
-			dotsAroundChecked = dotsAroundChecked.filter((it) => { 
+		dotsAroundChecked = dotsAroundChecked.filter((it) => {
 
-				// check dotes near the edge && find my colored Dot
+			if(!(typeof it == "undefined") && it.color === dot.color 
+					&& (it.d === null) ){
+				// console.log(dot.d);
+				// if(it.d === 0){
 
-				if(typeof it != "undefined" && it.color === this.player){
-					
-					this.coordinatesLine.push(it.x)
-					this.coordinatesLine.push(it.y)
-
+				// 	// viewPoly
+				// }
+				// else{
+					this.dots[`id-${it.x}-${it.y}`].d = dot.d + 1;
 					return true
-				}            
-			});
+				// }
+				
+			}
+		})
 
-			dotsAroundChecked
+		// console.log(dotsAroundChecked)
 
-			// console.log(dotsAroundChecked);
+		return dotsAroundChecked
+	}
 
-			return this.coordinatesLine
+	markRecursion(dotsArr){
+
+		this.i++
+		this.coordinatesLine.push([]);
+
+		dotsArr.forEach((it) => {
+
+			this.markRecursion(this.markClosestDot(it))
+		})
+	}
+
+	checkClosedCycle(){
+
+		let dot = this.props.clickedDot
+		let dots = this.props.dots;
+		let dotsAroundChecked = [
+			dots[`id-${dot.x - this.step}-${dot.y + this.step}`],
+			dots[`id-${dot.x}-${dot.y + this.step}`],
+			dots[`id-${dot.x + this.step}-${dot.y + this.step}`],
+			dots[`id-${dot.x + this.step}-${dot.y}`],
+			dots[`id-${dot.x + this.step}-${dot.y - this.step}`],
+			dots[`id-${dot.x}-${dot.y - this.step}`],
+			dots[`id-${dot.x - this.step}-${dot.y - this.step}`],
+			dots[`id-${dot.x - this.step}-${dot.y}`]
+		];
+
+		dotsAroundChecked = dotsAroundChecked.filter((it) => {
+
+			if(it.d === 1){
+				return true
+			}
+		});
+
+		return dotsAroundChecked;
+	}
+
+	calcPoly(){ //start
+
+		for(let I in this.props.dots){ 
+
+			if(this.props.dots[I].x != this.props.clickedDot.x && 
+				this.props.dots[I].y != this.props.clickedDot.y){
+
+				this.props.dots[I].d = null
+			}			
 		}
-		else{
-			return []
-		}
+
+		this.markRecursion(this.markClosestDot(this.props.clickedDot))
+
+
+
+		// this.markClosestDot(this.props.clickedDot)
 	}
 
 	render(){
 
 		console.log("jj")
 
-		let coordin = this.checkClosedPoly(this.props.clickedDot);
+		let coordin = this.calcPoly(this.props.clickedDot);
 		let colorLine = this.player ? "red" : "blue"
 
 		// let polygonsView = this.props.polygons.map((ind, it) => {

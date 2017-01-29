@@ -9,12 +9,13 @@ export function loadStore(store) {
 	}
 }
 
-export function setNewDotProperty(dots) {
+export function setNewDotProperty(dot,id) {
 
 	return {
 		type: constants.SET_NEW_DOT_PROPERTY,
 		payload: {
-			dots: dots
+			dot: dot,
+			id: id
 		}
 	}
 }

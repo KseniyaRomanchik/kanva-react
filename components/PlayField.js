@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Stage, Layer, Circle } from "react-konva";
+import { Stage, Layer, Circle, Text } from "react-konva";
 import Polygons from "./../components/Polygons"
 
 
@@ -18,12 +18,14 @@ export default class PlayField extends Component {
 
 		if(this.props.dots[id].color === ""){	
 			
-			let dots = this.props.dots;
+			let dotsid = Object.assign( {}, this.props.dots[id])
+			// let dots = Object.assign( {}, this.props.dots )
 
-			dots[id].color = this.props.move;
+			dotsid.color = this.props.move;
+			dotsid.d = 0;
 			this.props.setPlayer({ move : this.props.move ? 0 : 1 });
-			this.props.setNewDotProperty(dots);			
-			this.setState({ clickedDot : this.props.dots[id] })
+			this.props.setNewDotProperty(dotsid, id);			
+			this.setState({ clickedDot : dotsid });
 		}		
 	}
 
@@ -37,11 +39,15 @@ export default class PlayField extends Component {
 			dots.push(
 				<Circle key={ i++ }
 						radius={5}
-						fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
+						stroke={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
 						x={ this.props.dots[I].x }
 						y={ this.props.dots[I].y }
+						text={ "d" + this.props.dots[I].d }
 						onClick={ this.identyPlayer.bind(this) }
-				/>)
+				><Text x={ this.props.dots[I].x }
+						y={ this.props.dots[I].y } 
+						fontSize={ 8 }
+						text={ "d" + this.props.dots[I].d } /></ Circle>)
 		}
 
 		// console.log(this.props.dots)
@@ -51,14 +57,14 @@ export default class PlayField extends Component {
 				<h1><span className={ "player" + this.props.move }>Player { this.props.move }</span> move</h1>
 				<Stage width={ this.props.width } height={ this.props.height }>
 								{/* blue */}
-					<Polygons player={1} 
+					<Polygons player={0} 
 								dots={ this.props.dots } 
 								move={ this.props.move } 
 								polygons={ this.props.polygons }
 								step={ this.props.step } 
 								clickedDot={ this.state.clickedDot } />
 								{/* red */}
-					{/* <Polygons player={0} 
+					{/* <Polygons player={1} 
 								dots={ this.props.dots } 
 								move={ this.props.move } 
 								polygons={ this.props.polygons }

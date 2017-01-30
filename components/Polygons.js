@@ -14,7 +14,7 @@ export default class Polygons extends Component{
 		this.dots = this.props.dots;
 	}
 
-	findClosestDot(dot){
+	findClosestDots(dot){ // all dots
 
 		let dots = this.props.dots;
 		let dotsAround = [
@@ -30,13 +30,14 @@ export default class Polygons extends Component{
 		return dotsAround
 	}
 
-	markClosestDot(dotChecked){ // give names d0 d1 d2 d3 ...
+	markClosestDot(dotChecked){ // give names d0 d1 d2 d3 ..., mark only my dots
 
 		if(dotChecked){
-
-			this.findClosestDot(dotChecked).forEach((it) => {
-				if(!(typeof it == "undefined") && it.color === dotChecked.color 
-					&& (it.d === null) ){
+			this.findClosestDots(dotChecked).forEach((it) => {
+				if( !(typeof it == "undefined") && 
+					it.color === dotChecked.color && 
+					(it.d === null) && !it.inPoly && 
+					!it.captured ){
 
 					this.dots[`id-${it.x}-${it.y}`].d = dotChecked.d + 1;					
 					this.markClosestDot(it);
@@ -46,11 +47,10 @@ export default class Polygons extends Component{
 		}
 	}
 
-	findClosedPath(){ 
+	findClosingDot(){ 
 
 		let lastDot;
-
-		this.findClosestDot(this.props.clickedDot).filter((it) => {
+		this.findClosestDots(this.props.clickedDot).filter((it) => {
 
 			if(it && it.d > 2){
 				lastDot = it
@@ -61,7 +61,7 @@ export default class Polygons extends Component{
 	}	
 
 	findPathRecursion(lastDotForPath){ // fill coordinatesLine with closed poly's dots
-		this.findClosestDot(lastDotForPath).some((it) => {
+		this.findClosestDots(lastDotForPath).some((it) => {
 			if(it && it.d !== null && lastDotForPath.d == (it.d + 1)){
 
 				this.coordinatesLine[this.coordinatesLine.length - 1].push(it);
@@ -80,7 +80,7 @@ export default class Polygons extends Component{
 
 	deleteEmptyArr(){ // check existing opponent's dots into polygon
 
-		this.coordinatesLine.filter((it) => {
+		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
 			let rows = {};
 			let oppDotCheck = 0;
@@ -98,18 +98,28 @@ export default class Polygons extends Component{
 
 			for( let I in rows ){	
 
-				// let minX = Math.min.apply(rows[I]);
-				// let maxX = Math.max.apply(rows[I]);
-				console.log(rows[I])
-				// rows[I].forEach((it) => {
+				let minX = Math.min.apply(null, rows[I]);
+				let maxX = Math.max.apply(null, rows[I]);
+				let minXCounter = minX;
 
-					
-				// 	if(this.props.dots[`id-${it.x}-${I}`].color == !this.player){
+				rows[I].forEach(() => {
 
-				// 		this.props.dots[`id-${it.x}-${I}`].captured = true;
-				// 		oppDotCheck = 1; 
-				// 	}
-				// });
+					minXCounter += this.step					
+
+					if(minXCounter < maxX && minXCounter > minX && this.props.dots[`id-${minXCounter}-${I}`].color == !this.player){
+
+						let capturedDot = this.props.dots[`id-${minXCounter}-${I}`];
+						capturedDot.captured = true; 
+						this.props.setNewDotProperty(capturedDot, `id-${minXCounter}-${I}`);
+						oppDotCheck++						
+					}
+					else if( minXCounter < maxX && minXCounter > minX && this.props.dots[`id-${minXCounter}-${I}`].color == this.player ){
+						
+						let capturedDot = this.props.dots[`id-${minXCounter}-${I}`];
+						capturedDot.inPoly = true; 
+						this.props.setNewDotProperty(capturedDot, `id-${minXCounter}-${I}`);
+					}
+				});
 			}
 			
 			if(oppDotCheck){
@@ -138,7 +148,7 @@ export default class Polygons extends Component{
 
 			this.markClosestDot(this.props.clickedDot);
 
-			let lastDot = this.findClosedPath();
+			let lastDot = this.findClosingDot();
 
 			if(lastDot){
 				this.coordinatesLine.push([lastDot]);
@@ -152,8 +162,9 @@ export default class Polygons extends Component{
 		console.log("jj")
 
 		this.calcPoly(this.props.clickedDot);
+		console.log(this.coordinatesLine)
 		this.deleteEmptyArr()
-		// console.log(this.coordinatesLine)
+		console.log(this.coordinatesLine)
 		let polygons = this.coordinatesLine.map((it,ind) => {
 
 			let coords = [];
@@ -167,28 +178,7 @@ export default class Polygons extends Component{
 						stroke={ this.player ? "red" : "blue" }
 						strokeWidth = { 2 }
 						closed={ true } />)		
-		})		
-
-		// if(this.coordinatesLine.length){
-
-		// 	polygon = (<Line points={ coords }
-		// 				fill={ this.player ? "rgba(255, 0, 0, 0.3)" : "rgba(0, 0, 255, 0.3)" }
-		// 				stroke={ colorLine }
-		// 				strokeWidth = { 2 }
-		// 				closed={ true } />)
-		// }
-
-		console.log(this.coordinatesLine)
-
-		// let polygonsView = this.props.polygons.map((ind, it) => {
-
-		//     return (<Line key={ind} 
-		//                     points={ it.coordinates } 
-		//                     fill={ it.player - 1 ? "rgba(0,0,255,0.3)" : "rgba(255,0,0,0.3)" }
-		//                     stroke={ it.player - 1 ? "blue" : "red" }
-		//                     strokeWidth = { 2 }
-		//                     closed={ true }/>)
-		// });
+		});
 
 		return (
 			<Layer >

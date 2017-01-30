@@ -17,7 +17,8 @@ export default class GameFieldService {
 				y,
 				captured: false,
 				color: "", // 0,1
-				d: null
+				d: null,
+				inPoly: false
 			};
 		}
 		return dots;

@@ -73,6 +73,7 @@ export default class PlayField extends Component {
 								move={ this.props.move } 
 								polygons={ this.props.polygons }
 								step={ this.props.step } 
+								setNewDotProperty={ this.props.setNewDotProperty }
 								clickedDot={ this.state.clickedDot.color ? {} : this.state.clickedDot } />
 								{/* red */}
 					{/* <Polygons player={1} 

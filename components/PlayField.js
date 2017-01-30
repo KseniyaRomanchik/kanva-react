@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Stage, Layer, Text } from "react-konva";
+import { Stage, Layer, Circle } from "react-konva";
 import Polygons from "./../components/Polygons"
 
 
@@ -10,6 +10,12 @@ export default class PlayField extends Component {
 		this.state = {
 			clickedDot: {}
 		}
+
+		this.props.dots["id-12.5-37.5"].color = 0;
+		this.props.dots["id-37.5-12.5"].color = 0;
+		this.props.dots["id-62.5-37.5"].color = 0;
+		this.props.dots["id-12.5-62.5"].color = 0;
+		this.props.dots["id-62.5-62.5"].color = 0;
 	}
 
 	identyPlayer(e){
@@ -19,10 +25,9 @@ export default class PlayField extends Component {
 		if(this.props.dots[id].color === ""){	
 			
 			let dotsid = Object.assign( {}, this.props.dots[id])
-			// let dots = Object.assign( {}, this.props.dots )
 
 			dotsid.color = this.props.move;
-			dotsid.d = 0;
+			dotsid.d = 0; 
 			this.props.setPlayer({ move : this.props.move ? 0 : 1 });
 			this.props.setNewDotProperty(dotsid, id);			
 			this.setState({ clickedDot : dotsid });
@@ -36,21 +41,21 @@ export default class PlayField extends Component {
 		for( let I in this.props.dots){
 
 			dots.push(
-				// <Circle key={ i++ }
-				// 		radius={5}
-				// 		fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
-				// 		x={ this.props.dots[I].x }
-				// 		y={ this.props.dots[I].y }
-				// 		text={ "d" + this.props.dots[I].d }
-				// 		onClick={ this.identyPlayer.bind(this) }
-				// ></ Circle>)
-				<Text key={ i++ } 
-						x={ this.props.dots[I].x }
-						y={ this.props.dots[I].y } 
+				<Circle key={ i++ }
+						radius={5}
 						fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
-						fontSize={ 10 }
+						x={ this.props.dots[I].x }
+						y={ this.props.dots[I].y }
 						text={ "d" + this.props.dots[I].d }
-						onClick={ this.identyPlayer.bind(this) } />)
+						onClick={ this.identyPlayer.bind(this) }
+				></ Circle>)
+				// <Text key={ i++ } 
+				// 		x={ this.props.dots[I].x }
+				// 		y={ this.props.dots[I].y } 
+				// 		fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
+				// 		fontSize={ 10 }
+				// 		text={ "d" + this.props.dots[I].d }
+				// 		onClick={ this.identyPlayer.bind(this) } />)
 		}
 
 		// console.log(this.props.dots)
@@ -59,23 +64,24 @@ export default class PlayField extends Component {
 			<div>
 				<h1><span className={ "player" + this.props.move }>Player { this.props.move }</span> move</h1>
 				<Stage width={ this.props.width } height={ this.props.height }>
+					<Layer className="Dots">
+						{ dots }
+					</ Layer>
 								{/* blue */}
 					<Polygons player={0} 
 								dots={ this.props.dots } 
 								move={ this.props.move } 
 								polygons={ this.props.polygons }
 								step={ this.props.step } 
-								clickedDot={ this.state.clickedDot } />
+								clickedDot={ this.state.clickedDot.color ? {} : this.state.clickedDot } />
 								{/* red */}
 					{/* <Polygons player={1} 
 								dots={ this.props.dots } 
 								move={ this.props.move } 
 								polygons={ this.props.polygons }
 								step={ this.props.step } 
-	clickedDot={ this.state.clickedDot } /> */}
-					<Layer className="Dots">
-						{ dots }
-					</ Layer>
+								clickedDot={ this.state.clickedDot ? this.state.clickedDot : {} } /> */}
+					
 					<Layer className="Background" />
 				</ Stage>
 			</div>

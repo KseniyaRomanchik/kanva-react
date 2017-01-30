@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Stage, Layer, Circle, Text } from "react-konva";
+import { Stage, Layer, Text } from "react-konva";
 import Polygons from "./../components/Polygons"
 
 
@@ -35,19 +35,22 @@ export default class PlayField extends Component {
 			i = 0;
 		for( let I in this.props.dots){
 
-			i++
 			dots.push(
-				<Circle key={ i++ }
-						radius={5}
-						stroke={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
+				// <Circle key={ i++ }
+				// 		radius={5}
+				// 		fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
+				// 		x={ this.props.dots[I].x }
+				// 		y={ this.props.dots[I].y }
+				// 		text={ "d" + this.props.dots[I].d }
+				// 		onClick={ this.identyPlayer.bind(this) }
+				// ></ Circle>)
+				<Text key={ i++ } 
 						x={ this.props.dots[I].x }
-						y={ this.props.dots[I].y }
-						text={ "d" + this.props.dots[I].d }
-						onClick={ this.identyPlayer.bind(this) }
-				><Text x={ this.props.dots[I].x }
 						y={ this.props.dots[I].y } 
-						fontSize={ 8 }
-						text={ "d" + this.props.dots[I].d } /></ Circle>)
+						fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
+						fontSize={ 10 }
+						text={ "d" + this.props.dots[I].d }
+						onClick={ this.identyPlayer.bind(this) } />)
 		}
 
 		// console.log(this.props.dots)

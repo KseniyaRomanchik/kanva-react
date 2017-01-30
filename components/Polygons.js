@@ -74,9 +74,8 @@ export default class Polygons extends Component{
 		})
 	}
 
-	checkClosedCycle(){
-
-		let dot = this.props.clickedDot
+	checkClosedCycle(dot){
+		
 		let dots = this.props.dots;
 		let dotsAroundChecked = [
 			dots[`id-${dot.x - this.step}-${dot.y + this.step}`],

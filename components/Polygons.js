@@ -57,7 +57,7 @@ export default class Polygons extends Component{
 				return true
 			}
 		});
-		return lastDot // return last in polygon d... near the d0
+		return lastDot // return last dot from polygon
 	}	
 
 	findPathRecursion(lastDotForPath){ // fill coordinatesLine with closed poly's dots
@@ -78,7 +78,7 @@ export default class Polygons extends Component{
 		return true
 	}	
 
-	deleteEmptyArr(){ // check existing opponent's dots into polygon
+	deleteEmptyPolygons(){ // check existing opponent's dots into polygon
 
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
@@ -129,8 +129,12 @@ export default class Polygons extends Component{
 				return false
 			}
 		})
+	}
 
-		// Math.max.apply
+	opponentDotClick(){
+
+		console.log(this.props.clickedDots)
+		// handler for oppDot clicking
 	}
 
 	calcPoly(){ // start
@@ -143,8 +147,9 @@ export default class Polygons extends Component{
 				this.props.dots[I].d = null
 			}			
 		}
-
-		if("x" in this.props.clickedDot){
+		// for my dots
+		if("color" in this.props.clickedDot && 
+			this.props.clickedDot.color == this.player){
 
 			this.markClosestDot(this.props.clickedDot);
 
@@ -155,16 +160,18 @@ export default class Polygons extends Component{
 				this.findPathRecursion(lastDot);
 			} 		
 		}
+		// for opponent dots
+		else if( this.props.clickedDot.color == !this.player ){
+
+			this.opponentDotClick()
+		}
 	}
 
 	render(){
 
-		console.log("jj")
-
+		console.log("jj");
 		this.calcPoly(this.props.clickedDot);
-		console.log(this.coordinatesLine)
-		this.deleteEmptyArr()
-		console.log(this.coordinatesLine)
+		this.deleteEmptyPolygons();
 		let polygons = this.coordinatesLine.map((it,ind) => {
 
 			let coords = [];

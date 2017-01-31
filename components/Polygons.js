@@ -18,14 +18,14 @@ export default class Polygons extends Component{
 
 		let dots = this.props.dots;
 		let dotsAround = [
-			dots[`id-${dot.x - this.step}-${dot.y + this.step}`],
-			dots[`id-${dot.x}-${dot.y + this.step}`],
-			dots[`id-${dot.x + this.step}-${dot.y + this.step}`],
-			dots[`id-${dot.x + this.step}-${dot.y}`],
-			dots[`id-${dot.x + this.step}-${dot.y - this.step}`],
-			dots[`id-${dot.x}-${dot.y - this.step}`],
-			dots[`id-${dot.x - this.step}-${dot.y - this.step}`],
-			dots[`id-${dot.x - this.step}-${dot.y}`]
+			dots[`id-${dot.indexX - 1}-${dot.indexY + 1}`],
+			dots[`id-${dot.indexX}-${dot.indexY + 1}`],
+			dots[`id-${dot.indexX + 1}-${dot.indexY + 1}`],
+			dots[`id-${dot.indexX + 1}-${dot.indexY}`],
+			dots[`id-${dot.indexX + 1}-${dot.indexY - 1}`],
+			dots[`id-${dot.indexX}-${dot.indexY - 1}`],
+			dots[`id-${dot.indexX - 1}-${dot.indexY - 1}`],
+			dots[`id-${dot.indexX - 1}-${dot.indexY}`]
 		];
 		return dotsAround
 	}
@@ -38,8 +38,12 @@ export default class Polygons extends Component{
 					it.color === dotChecked.color && 
 					(it.d === null) && !it.inPoly && 
 					!it.captured ){
+					
+					let dotId = `id-${it.indexX}-${it.indexY}`;
+					let positionedDot = this.dots[dotId];
 
-					this.dots[`id-${it.x}-${it.y}`].d = dotChecked.d + 1;					
+					positionedDot.d = dotChecked.d + 1;
+					this.props.setNewDotProperty(positionedDot,dotId);								
 					this.markClosestDot(it);
 					return true 									
 				}
@@ -49,18 +53,19 @@ export default class Polygons extends Component{
 
 	findClosingDot(){ 
 
-		let lastDot;
+		let lastDots = [];
 		this.findClosestDots(this.props.clickedDot).filter((it) => {
 
 			if(it && it.d > 2){
-				lastDot = it
+				lastDots.push(it)
 				return true
 			}
 		});
-		return lastDot // return last dot from polygon
+		return lastDots // return last dot from polygon
 	}	
 
-	findPathRecursion(lastDotForPath){ // fill coordinatesLine with closed poly's dots
+	findPathRecursion(lastDotForPath){ // fill cordinatesLine with closed poly's dots
+	
 		this.findClosestDots(lastDotForPath).some((it) => {
 			if(it && it.d !== null && lastDotForPath.d == (it.d + 1)){
 
@@ -83,18 +88,28 @@ export default class Polygons extends Component{
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
 			let rows = {};
+			let cols = {};
 			let oppDotCheck = 0;
 
 			it.forEach((item) => {
-				if(`${item.y}` in rows){
+				if(item.indexY in rows){
 
-					rows[`${item.y}`].push(item.x);
+					rows[item.indexY].push(item.indexX);
 				}
 				else{
-					rows[`${item.y}`] = [];
-					rows[`${item.y}`].push(item.x);
-				}				
-			})			
+					rows[item.indexY] = [];
+					rows[item.indexY].push(item.indexX);	
+				}
+
+				if(item.indexX in cols){
+
+					cols[item.indexX].push(item.indexY)
+				}
+				else{
+					cols[item.indexX] = [];				
+					cols[item.indexX].push(item.indexY);
+				}			
+			});	
 
 			for( let I in rows ){	
 
@@ -104,36 +119,76 @@ export default class Polygons extends Component{
 
 				rows[I].forEach(() => {
 
-					minXCounter += this.step					
+					minXCounter += 1
+					let dotId = `id-${minXCounter}-${I}`;					
 
-					if(minXCounter < maxX && minXCounter > minX && this.props.dots[`id-${minXCounter}-${I}`].color == !this.player){
+					if(minXCounter < maxX && minXCounter > minX && 
+						this.props.dots[dotId].color == !this.player &&
+						!this.props.dots[dotId].captured){
 
-						let capturedDot = this.props.dots[`id-${minXCounter}-${I}`];
-						capturedDot.captured = true; 
-						this.props.setNewDotProperty(capturedDot, `id-${minXCounter}-${I}`);
-						oppDotCheck++						
+							// console.log("in first")
+						oppDotCheck = 1;					
 					}
-					else if( minXCounter < maxX && minXCounter > minX && this.props.dots[`id-${minXCounter}-${I}`].color == this.player ){
+					else if( minXCounter < maxX && minXCounter > minX && this.props.dots[dotId].color == this.player ){
 						
-						let capturedDot = this.props.dots[`id-${minXCounter}-${I}`];
+						let capturedDot = this.props.dots[dotId];
 						capturedDot.inPoly = true; 
-						this.props.setNewDotProperty(capturedDot, `id-${minXCounter}-${I}`);
+						this.props.setNewDotProperty(capturedDot, dotId);
+					}
+				});
+			}
+
+			for( let I in cols ){	
+
+				let minY = Math.min.apply(null, cols[I]);
+				let maxY = Math.max.apply(null, cols[I]);
+				let minYCounter = minY;
+
+				cols[I].forEach(() => {
+
+					minYCounter += 1;
+					let dotId = `id-${I}-${minYCounter}`;
+
+					// console.log("coords",minY,minYCounter,maxY)
+
+					// console.log("in",minYCounter < maxY, minYCounter > minY, 
+					// 	this.props.dots[dotId].color == !this.player,
+					// 	!this.props.dots[dotId].captured);									
+
+					if(minYCounter < maxY && minYCounter > minY && 
+						this.props.dots[dotId].color == !this.player &&
+						!this.props.dots[dotId].captured){
+
+							// console.log("in second")
+
+						let capturedDot = this.props.dots[dotId];
+						capturedDot.captured = true; 
+						this.props.setNewDotProperty(capturedDot, dotId);
+						oppDotCheck = oppDotCheck ? 2 : 1						
+					}
+					else if( minYCounter < maxY && minYCounter > minY && this.props.dots[dotId].color == this.player ){
+						
+						let capturedDot = this.props.dots[dotId];
+						capturedDot.inPoly = true; 
+						this.props.setNewDotProperty(capturedDot, dotId);
 					}
 				});
 			}
 			
-			if(oppDotCheck){
-				return true
+			if(oppDotCheck == 2){
+				return true 
 			}
 			else{
 				return false
 			}
 		})
+
+		this.props.setPolygons(this.coordinatesLine, this.player);
 	}
 
 	opponentDotClick(){
 
-		console.log(this.props.clickedDots)
+		// console.log(this.props.clickedDots)
 		// handler for oppDot clicking
 	}
 
@@ -141,8 +196,8 @@ export default class Polygons extends Component{
 
 		for(let I in this.props.dots){ 
 
-			if(this.props.dots[I].x != this.props.clickedDot.x && 
-				this.props.dots[I].y != this.props.clickedDot.y){
+			if(this.props.dots[I].indexX != this.props.clickedDot.indexX && 
+				this.props.dots[I].indexY != this.props.clickedDot.indexY){
 
 				this.props.dots[I].d = null
 			}			
@@ -152,12 +207,19 @@ export default class Polygons extends Component{
 			this.props.clickedDot.color == this.player){
 
 			this.markClosestDot(this.props.clickedDot);
+			let lastDots = this.findClosingDot();
 
-			let lastDot = this.findClosingDot();
+			if(lastDots.length){
 
-			if(lastDot){
-				this.coordinatesLine.push([lastDot]);
-				this.findPathRecursion(lastDot);
+				// let lastDot = lastDots[0];
+				lastDots.forEach((it) => {
+
+					this.coordinatesLine.push([it]);
+					this.findPathRecursion(it);
+
+					// lastDot = it.d < lastDots[0].d ? it : lastDot;
+				});
+				
 			} 		
 		}
 		// for opponent dots
@@ -170,9 +232,10 @@ export default class Polygons extends Component{
 	render(){
 
 		console.log("jj");
+		
 		this.calcPoly(this.props.clickedDot);
 		this.deleteEmptyPolygons();
-		let polygons = this.coordinatesLine.map((it,ind) => {
+		let polygons = this.props.polygons["0"].map((it,ind) => {
 
 			let coords = [];
 
@@ -188,7 +251,7 @@ export default class Polygons extends Component{
 		});
 
 		return (
-			<Layer >
+			<Layer x={this.props.step/2} y={this.props.step/2} >
 				{ polygons }
 			</ Layer>
 		)

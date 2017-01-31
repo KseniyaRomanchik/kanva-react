@@ -9,6 +9,17 @@ export function loadStore(store) {
 	}
 }
 
+export function setPolygons(coordLine, player){
+
+	return {
+		type: constants.SET_POLYGONS,
+		payload: {
+			polygons: coordLine,
+			player : player
+		}
+	}
+}
+
 export function setNewDotProperty(dot,id) {
 
 	return {

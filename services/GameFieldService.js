@@ -9,14 +9,16 @@ export default class GameFieldService {
 
 		for(let i = 0; i < height * width; i++){
 
-			let x = ((step * i) - (Math.floor(i / width) * widthPixels)) + step/2,
-				y = (Math.floor(i / width) * step) + step/2
+			let x = (step * i) - (Math.floor(i / width) * widthPixels),
+				y = (Math.floor(i / width) * step)
 			
-			dots[`id-${x}-${y}`] = {
+			dots[`id-${x/step}-${y/step}`] = {
 				x,
 				y,
+				indexX : x/step,
+				indexY : y/step,
 				captured: false,
-				color: "", // 0,1
+				color: "", // 0 - blue,1 - red
 				d: null,
 				inPoly: false
 			};

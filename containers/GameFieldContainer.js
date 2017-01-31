@@ -29,6 +29,7 @@ class GameFieldContainer extends Component{
 					setPlayer={ this.props.setPlayer }  
 					step={ this.props.step }
 					setNewDotProperty={ this.props.setNewDotProperty }
+					setPolygons={ this.props.setPolygons }
 					move={this.props.move}
 					/>
 			</div>
@@ -49,7 +50,8 @@ function mapStateToProps (state) {
 
 export default connect( mapStateToProps, {
 		setNewDotProperty: actions.setNewDotProperty,
-		setPlayer: actions.setPlayer
+		setPlayer: actions.setPlayer,
+		setPolygons: actions.setPolygons
 	})(GameFieldContainer);
 
 // connect store

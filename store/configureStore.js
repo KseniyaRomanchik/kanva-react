@@ -1,21 +1,25 @@
-import { createStore, applyMiddleware } from "redux"
-import rootReducer from "../reducers"
-import thunk from "redux-thunk"
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "../reducers";
+import thunk from "redux-thunk";
 
-function configureStore() {
+// const enhancer = compose(
+//   // Middleware you want to use in development:
+//   applyMiddleware(thunk),
+//   // Required! Enable Redux DevTools with the monitors you chose
+//   DevTools.instrument()
+// );
 
-	const store = createStore(rootReducer, applyMiddleware(thunk))
+export default function configureStore() {
+
+	const store = createStore(rootReducer, applyMiddleware(thunk));
 
 	if(module.hot) {
 
-		module.hot.accept("../reducers", () => {
-			const nextRootReducer = require("../reducers")
-			store.replaceReducer(nextRootReducer)
+		module.hot.accept("../reducers", () => { 
+			store.replaceReducer(require("../reducers"))
 		})
 	}
 	return store
 }
 
-const store = configureStore();
-
-export default store
+// export const store = configureStore();

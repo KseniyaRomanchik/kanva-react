@@ -42,16 +42,14 @@ function mapStateToProps (state) {
 	return {
 		dots: state.dots.dots,
 		size: state.dots.size,
-		step: state.dots.step,
 		move: state.dots.move,
-		polygons: state.dots.polygons
+		step: state.dots.step
 	}
 }
 
 export default connect( mapStateToProps, {
 		setNewDotProperty: actions.setNewDotProperty,
-		setPlayer: actions.setPlayer,
-		setPolygons: actions.setPolygons
+		setPlayer: actions.setPlayer
 	})(GameFieldContainer);
 
 // connect store

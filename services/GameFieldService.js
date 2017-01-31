@@ -17,10 +17,12 @@ export default class GameFieldService {
 				y,
 				indexX : x/step,
 				indexY : y/step,
-				captured: false,
+				
 				color: "", // 0 - blue,1 - red
 				d: null,
-				inPoly: false
+				captured: false,
+				intoPoly: false,
+				inPolyBorder: false
 			};
 		}
 		return dots;

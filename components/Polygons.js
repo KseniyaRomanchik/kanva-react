@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Layer, Line } from "react-konva";
 
-
 export default class Polygons extends Component{
 
 	constructor(props){
@@ -36,7 +35,7 @@ export default class Polygons extends Component{
 			this.findClosestDots(dotChecked).forEach((it) => {
 				if( !(typeof it == "undefined") && 
 					it.color === dotChecked.color && 
-					(it.d === null) && !it.inPoly && 
+					(it.d === null) && !it.intoPoly && 
 					!it.captured ){
 					
 					let dotId = `id-${it.indexX}-${it.indexY}`;
@@ -92,17 +91,21 @@ export default class Polygons extends Component{
 			let oppDotCheck = 0;
 
 			it.forEach((item) => {
+
+				item.inPolyBorder = true;
+				this.props.setNewDotProperty(item,`id-${item.indexX}-${item.indexY}`)				
+				
 				if(item.indexY in rows){
 
 					rows[item.indexY].push(item.indexX);
 				}
 				else{
+
 					rows[item.indexY] = [];
 					rows[item.indexY].push(item.indexX);	
 				}
 
 				if(item.indexX in cols){
-
 					cols[item.indexX].push(item.indexY)
 				}
 				else{
@@ -110,6 +113,8 @@ export default class Polygons extends Component{
 					cols[item.indexX].push(item.indexY);
 				}			
 			});	
+
+			// console.log(it)
 
 			for( let I in rows ){	
 
@@ -129,10 +134,12 @@ export default class Polygons extends Component{
 							// console.log("in first")
 						oppDotCheck = 1;					
 					}
-					else if( minXCounter < maxX && minXCounter > minX && this.props.dots[dotId].color == this.player ){
+					else if( minXCounter < maxX && minXCounter > minX 
+					&& this.props.dots[dotId].color == this.player 
+					&& !this.props.dots[dotId].inPolyBorder){
 						
 						let capturedDot = this.props.dots[dotId];
-						capturedDot.inPoly = true; 
+						capturedDot.intoPoly = true; 
 						this.props.setNewDotProperty(capturedDot, dotId);
 					}
 				});
@@ -166,10 +173,12 @@ export default class Polygons extends Component{
 						this.props.setNewDotProperty(capturedDot, dotId);
 						oppDotCheck = oppDotCheck ? 2 : 1						
 					}
-					else if( minYCounter < maxY && minYCounter > minY && this.props.dots[dotId].color == this.player ){
+					else if( minYCounter < maxY && minYCounter > minY 
+							&& this.props.dots[dotId].color == this.player 
+							&& !this.props.dots[dotId].inPolyBorder){
 						
 						let capturedDot = this.props.dots[dotId];
-						capturedDot.inPoly = true; 
+						capturedDot.intoPoly = true; 
 						this.props.setNewDotProperty(capturedDot, dotId);
 					}
 				});

@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import { Stage, Layer, Circle } from "react-konva";
-import Polygons from "./../components/Polygons"
-
+import PolygonsContainer from "./../containers/PolygonsContainer"
 
 export default class PlayField extends Component {
 
 	constructor(props){
-		super(props);
-		this.state = {
-			clickedDot: {}
-		}
+		super(props)
 
 		this.props.dots["id-0-1"].color = 0;
 		this.props.dots["id-0-2"].color = 0;
@@ -29,18 +25,25 @@ export default class PlayField extends Component {
 		let id = `id-${e.target.attrs.x/this.props.step}-${e.target.attrs.y/this.props.step}`;
 
 		if(this.props.dots[id].color === ""){	
-			
-			let dotsid = Object.assign( {}, this.props.dots[id])
 
-			dotsid.color = this.props.move;
-			dotsid.d = 0; 
-			this.props.setPlayer({ move : this.props.move ? 0 : 1 });
-			this.props.setNewDotProperty(dotsid, id);			
-			this.setState({ clickedDot : dotsid });
+			let dotid = this.props.dots[id];
+			
+			dotid.color = this.props.move.player;
+			
+			dotid.d = 0; 
+			this.props.setNewDotProperty(dotid, id);
+			this.props.setPlayer({ 
+				move : { 
+					player: this.props.move.player ? 0 : 1, 
+					clickedDot: dotid
+				}
+			});		
 		}		
 	}
 
 	render(){
+		// console.log(this.props.dots["id-0-0"])
+		console.log("circlesReload")
 
 		let dots = [],
 			i = 0;
@@ -48,7 +51,7 @@ export default class PlayField extends Component {
 
 			dots.push(
 				<Circle key={ i++ }
-						radius={5}
+						radius={ 5 }
 						fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
 						x={ this.props.dots[I].x }
 						y={ this.props.dots[I].y }
@@ -67,28 +70,12 @@ export default class PlayField extends Component {
 
 		return (
 			<div>
-				<h1><span className={ "player" + this.props.move }>Player { this.props.move }</span> move</h1>
+				<h1><span className={ "player" + this.props.move.player }>Player { this.props.move.player }</span> move</h1>
 				<Stage width={ this.props.width } height={ this.props.height }>
 						<Layer x={this.props.step/2} y={this.props.step/2} className="Dots">
 							{ dots }
 						</ Layer>
-									{/* blue */}
-						<Polygons player={0} 
-									dots={ this.props.dots } 
-									move={ this.props.move } 
-									polygons={ this.props.polygons }
-									step={ this.props.step } 
-									setNewDotProperty={ this.props.setNewDotProperty }
-									clickedDot={ this.state.clickedDot.color ? {} : this.state.clickedDot } 
-									setPolygons={ this.props.setPolygons }
-									polygons = { this.props.polygons }/>
-									{/* red */}
-						{/* <Polygons player={1} 
-									dots={ this.props.dots } 
-									move={ this.props.move } 
-									polygons={ this.props.polygons }
-									step={ this.props.step } 
-									clickedDot={ this.state.clickedDot ? this.state.clickedDot : {} } /> */}
+						<PolygonsContainer />					
 						
 						<Layer x={this.props.step/2} y={this.props.step/2} className="Background" />
 				</ Stage>

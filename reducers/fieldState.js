@@ -4,7 +4,10 @@ let initialState = {
 	dots: {},
 	size: { width: 0, height: 0}, // dots
 	step: 25,
-	move: 0,
+	move: {
+		player: 0,
+		clickedDot: {}
+	},
 	polygons: {
 		0:[], // player 0
 		1:[]  // player 1
@@ -17,18 +20,15 @@ export default function fieldState(state = initialState, action) {
 		case constants.SET_NEW_DOT_PROPERTY: {
 
 			state.dots[action.payload.id] = action.payload.dot
-			
-			return { ...state};
+			// console.log(state.dots)
+			return Object.assign({}, state);
 		}
 
 		case constants.SET_POLYGONS: {
 
-			// console.log(action.payload,state.polygons)
-
 			state.polygons[action.payload.player] = state.polygons[action.payload.player].concat(action.payload.polygons);
-			console.log(state.polygons)
 			
-			return { ...state};
+			return Object.assign({}, state);
 		}
 
 		case constants.SET_FIELD_SIZE: {

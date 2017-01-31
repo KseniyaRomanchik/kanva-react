@@ -7,8 +7,8 @@ export default class PlayField extends Component {
 	constructor(props){
 		super(props)
 
-		this.props.dots["id-0-1"].color = 0;
 		this.props.dots["id-0-2"].color = 0;
+		this.props.dots["id-0-1"].color = 0;
 		this.props.dots["id-0-4"].color = 0;
 		this.props.dots["id-2-1"].color = 0;
 		this.props.dots["id-2-2"].color = 0;
@@ -28,8 +28,7 @@ export default class PlayField extends Component {
 
 			let dotid = this.props.dots[id];
 			
-			dotid.color = this.props.move.player;
-			
+			dotid.color = this.props.move.player;			
 			dotid.d = 0; 
 			this.props.setNewDotProperty(dotid, id);
 			this.props.setPlayer({ 

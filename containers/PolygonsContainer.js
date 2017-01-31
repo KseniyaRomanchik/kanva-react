@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as actions from "../actions/actions";
 import { connect } from "react-redux";
-// import { Layer } from "react-konva";
+import { Layer } from "react-konva";
 import Polygons from "./../components/Polygons";
 
 class PolygonsContainer extends Component{
@@ -13,16 +13,17 @@ class PolygonsContainer extends Component{
 	render(){	
 
 		return (   
-            
-            <Polygons player={ 0 } 
-                dots={ this.props.dots } 
-                move={ this.props.move.player } 
-                polygons={ this.props.polygons }
-                step={ this.props.step } 
-                setNewDotProperty={ this.props.setNewDotProperty }
-                clickedDot={ this.props.move.clickedDot.color ? {} : this.props.move.clickedDot } 
-                setPolygons={ this.props.setPolygons }
-                polygons = { this.props.polygons }/>
+            <Layer>
+                <Polygons player={ 0 } 
+                    dots={ this.props.dots } 
+                    move={ this.props.move.player } 
+                    polygons={ this.props.polygons }
+                    step={ this.props.step } 
+                    setNewDotProperty={ this.props.setNewDotProperty }
+                    clickedDot={ this.props.move.clickedDot.color ? {} : this.props.move.clickedDot } 
+                    setPolygons={ this.props.setPolygons }
+                    polygons = { this.props.polygons }/>
+            </Layer>
 		)
 	}
 }

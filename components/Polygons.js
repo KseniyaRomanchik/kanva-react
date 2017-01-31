@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Layer, Line } from "react-konva";
+import { Group, Line } from "react-konva";
 
 export default class Polygons extends Component{
 
@@ -66,7 +66,10 @@ export default class Polygons extends Component{
 	findPathRecursion(lastDotForPath){ // fill cordinatesLine with closed poly's dots
 	
 		this.findClosestDots(lastDotForPath).some((it) => {
-			if(it && it.d !== null && lastDotForPath.d == (it.d + 1)){
+
+			if(it && it.d !== null && 
+			lastDotForPath.d == (it.d + 1) && 
+			it.color === this.player){
 
 				this.coordinatesLine[this.coordinatesLine.length - 1].push(it);
 
@@ -84,13 +87,17 @@ export default class Polygons extends Component{
 
 	deleteEmptyPolygons(){ // check existing opponent's dots into polygon
 
+	// console.log(this.coordinatesLine)
+
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
+
+			console.log("in")
 
 			let rows = {};
 			let cols = {};
 			let oppDotCheck = 0;
 
-			it.forEach((item) => {
+			it.forEach((item) => { // create objects with cols and rows 
 
 				item.inPolyBorder = true;
 				this.props.setNewDotProperty(item,`id-${item.indexX}-${item.indexY}`)				
@@ -125,14 +132,21 @@ export default class Polygons extends Component{
 				rows[I].forEach(() => {
 
 					minXCounter += 1
-					let dotId = `id-${minXCounter}-${I}`;					
+					let dotId = `id-${minXCounter}-${I}`;
+
+					// console.log(minXCounter < maxX , minXCounter > minX , 
+					// 	this.props.dots[dotId].color === !this.player ,
+					// 	!this.props.dots[dotId].captured)
+
+					console.log(minX,minXCounter,maxX)					
 
 					if(minXCounter < maxX && minXCounter > minX && 
-						this.props.dots[dotId].color == !this.player &&
+						this.props.dots[dotId].color === !this.player &&
 						!this.props.dots[dotId].captured){
 
-							// console.log("in first")
-						oppDotCheck = 1;					
+						oppDotCheck = 1;	
+
+						// console.log("in first")				
 					}
 					else if( minXCounter < maxX && minXCounter > minX 
 					&& this.props.dots[dotId].color == this.player 
@@ -154,19 +168,13 @@ export default class Polygons extends Component{
 				cols[I].forEach(() => {
 
 					minYCounter += 1;
-					let dotId = `id-${I}-${minYCounter}`;
-
-					// console.log("coords",minY,minYCounter,maxY)
-
-					// console.log("in",minYCounter < maxY, minYCounter > minY, 
-					// 	this.props.dots[dotId].color == !this.player,
-					// 	!this.props.dots[dotId].captured);									
+					let dotId = `id-${I}-${minYCounter}`;									
 
 					if(minYCounter < maxY && minYCounter > minY && 
 						this.props.dots[dotId].color == !this.player &&
 						!this.props.dots[dotId].captured){
 
-							// console.log("in second")
+						// console.log("in second")
 
 						let capturedDot = this.props.dots[dotId];
 						capturedDot.captured = true; 
@@ -260,9 +268,9 @@ export default class Polygons extends Component{
 		});
 
 		return (
-			<Layer x={this.props.step/2} y={this.props.step/2} >
+			<Group x={this.props.step/2} y={this.props.step/2} >
 				{ polygons }
-			</ Layer>
+			</ Group>
 		)
 	}
 }

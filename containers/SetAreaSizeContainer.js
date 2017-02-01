@@ -21,7 +21,6 @@ class SetAreaSizeContainer extends Component{
 		return (
 			<div>
 				<SetFieldSize size={ this.props.size }
-								dots={ this.props.dots }
 								step={ this.props.step }
 								setFieldSize={ this.props.setFieldSize }
 								/>
@@ -34,9 +33,8 @@ class SetAreaSizeContainer extends Component{
 function mapStateToProps (state) {
 	
 	return {
-		size: state.dots.size,
-		dots: state.dots.dots,
-		step: state.dots.step
+		size: state.dots.fieldSize,
+		step: state.dots.fieldSize.step
 	}
 }
 

@@ -45,9 +45,9 @@ function mapStateToProps (state) {
 	
 	return {
 		dots: state.dots.dots,
-		size: state.dots.size,
-		step: state.dots.step,
-		move: state.dots.move,
+		size: state.dots.fieldSize,
+		step: state.dots.fieldSize.step,
+		move: state.dots.currentMove,
 		polygons: state.dots.polygons
 	}
 }

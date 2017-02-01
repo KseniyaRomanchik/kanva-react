@@ -5,13 +5,6 @@ import PlayField from "./../components/PlayField";
 
 class GameFieldContainer extends Component{
 
-	constructor(props) {
-		super(props)
-		// width
-		// height	
-		// step
-	}
-
 	render(){		
 
 		// changeSizeInStoreEvent(){}
@@ -41,9 +34,9 @@ function mapStateToProps (state) {
 	
 	return {
 		dots: state.dots.dots,
-		size: state.dots.size,
-		move: state.dots.move,
-		step: state.dots.step
+		size: state.dots.fieldSize,
+		move: state.dots.currentMove,
+		step: state.dots.fieldSize.step
 	}
 }
 

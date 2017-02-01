@@ -47,6 +47,14 @@ export function setEmptyPolygon(move) {
 	}
 }
 
+export function setGame(json) {
+
+	return {
+		type: constants.SET_GAME,
+		payload: json
+	}
+}
+
 function setFieldAction(fieldData) {
 
 	return {
@@ -55,7 +63,7 @@ function setFieldAction(fieldData) {
 	}
 }
 
-export function setFieldSize(width, height, step = 25) {
+export function setFieldSize(width, height, step) {
 
 	let dots = GameFieldService.setField(width, height, step);
 
@@ -63,9 +71,10 @@ export function setFieldSize(width, height, step = 25) {
 
 		dispatch(setFieldAction({
 			dots: dots,
-			size: {
+			fieldSize: {
 				width,
-				height
+				height,
+				step
 			}
 		}));
 	}

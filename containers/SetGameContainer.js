@@ -1,20 +1,15 @@
 import React, {Component} from "react";
 import * as actions from "../actions/actions";
 import { connect } from "react-redux";
+import LoadGame from "./../components/LoadGame";
 
-class SetGameContainer extends Component{
-
-	constructor(props) {
-		super(props);
-	}
+class SetGame extends Component{
 
 	render(){
 
-		// refreshStoreEvent{}
-
 		return (
 			<div>
-				{/* textareaComponent */}
+				<LoadGame setGame={ this.props.setGame } />
 			</div>
 		)
 	}
@@ -23,13 +18,13 @@ class SetGameContainer extends Component{
 function mapStateToProps (state) {
 	
 	return {
-		size: state.dots.size
+		size: state.dots.fieldSize
 	}
 }
 
 export default connect( mapStateToProps, {
-		setFieldSize: actions.setFieldSize
-	})(SetGameContainer);
+		setGame: actions.setGame
+	})(SetGame);
 
 
 // connect store

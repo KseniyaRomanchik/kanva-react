@@ -3,7 +3,7 @@ import * as actions from "../actions/actions";
 import { connect } from "react-redux";
 import SetFieldSize from "./../components/SetFieldSize";
 
-class LoadAreaSizeContainer extends Component{
+class SetAreaSizeContainer extends Component{
 
 	constructor(props) {
 		super(props)
@@ -42,6 +42,6 @@ function mapStateToProps (state) {
 
 export default connect( mapStateToProps, {
 		setFieldSize: actions.setFieldSize
-	})(LoadAreaSizeContainer);
+	})(SetAreaSizeContainer);
 
 // connect store

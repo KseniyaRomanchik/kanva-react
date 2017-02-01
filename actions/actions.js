@@ -39,6 +39,14 @@ export function setPlayer(move) {
 	}
 }
 
+export function setEmptyPolygon(move) {
+
+	return {
+		type: constants.SET_EMPTY_POLYGON,
+		payload: move
+	}
+}
+
 function setFieldAction(fieldData) {
 
 	return {

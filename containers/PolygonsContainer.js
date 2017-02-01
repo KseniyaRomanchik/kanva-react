@@ -22,6 +22,7 @@ class PolygonsContainer extends Component{
                     setNewDotProperty={ this.props.setNewDotProperty }
                     clickedDot={ this.props.move.clickedDot.color ? this.props.move.clickedDot : {} } 
                     setPolygons={ this.props.setPolygons }
+                    setEmptyPolygon={ this.props.setEmptyPolygon }
                     polygons = { this.props.polygons }/>
                 <Polygons player={ 0 } 
                     dots={ this.props.dots } 
@@ -31,6 +32,7 @@ class PolygonsContainer extends Component{
                     setNewDotProperty={ this.props.setNewDotProperty }
                     clickedDot={ this.props.move.clickedDot.color ? {} : this.props.move.clickedDot } 
                     setPolygons={ this.props.setPolygons }
+                    setEmptyPolygon={ this.props.setEmptyPolygon }
                     polygons = { this.props.polygons }/>
             </Layer>
 		)
@@ -52,7 +54,8 @@ function mapStateToProps (state) {
 
 export default connect( mapStateToProps, {
     setNewDotProperty: actions.setNewDotProperty,
-    setPolygons: actions.setPolygons
+    setPolygons: actions.setPolygons,
+    setEmptyPolygon: actions.setEmptyPolygon
 })(PolygonsContainer);
 
 // connect store

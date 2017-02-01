@@ -10,7 +10,9 @@ let initialState = {
 	},
 	polygons: {
 		0:[], // player 0
-		1:[]  // player 1
+		1:[], // player 1
+		emptyPoly0: [],
+		emptyPoly1: []
 	}
 }
 
@@ -27,6 +29,15 @@ export default function fieldState(state = initialState, action) {
 		case constants.SET_POLYGONS: {
 
 			state.polygons[action.payload.player] = state.polygons[action.payload.player].concat(action.payload.polygons);
+			
+			return Object.assign({}, state);
+		}
+
+		case constants.SET_EMPTY_POLYGON: {
+
+			let key = "emptyPoly" + action.payload.player;
+
+			state.polygons[key].push(action.payload.polygons);
 			
 			return Object.assign({}, state);
 		}

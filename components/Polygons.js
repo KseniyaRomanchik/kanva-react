@@ -87,7 +87,7 @@ export default class Polygons extends Component{
 
 	deleteEmptyPolygons(){ // check existing opponent's dots into polygon
 
-	// console.log(this.coordinatesLine)
+	
 
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
@@ -107,12 +107,12 @@ export default class Polygons extends Component{
 					rows[item.indexY].push(item.indexX);
 				}
 				else{
-
 					rows[item.indexY] = [];
 					rows[item.indexY].push(item.indexX);	
 				}
 
 				if(item.indexX in cols){
+
 					cols[item.indexX].push(item.indexY)
 				}
 				else{
@@ -164,8 +164,6 @@ export default class Polygons extends Component{
 					minYCounter += 1;
 					let dotId = `id-${I}-${minYCounter}`;	
 
-					// if(!this.player) console.log( this.props.dots[dotId].color,this.player )								
-
 					if(minYCounter < maxY && minYCounter > minY && 
 						this.props.dots[dotId].color == !this.player &&
 						!this.props.dots[dotId].captured){
@@ -192,11 +190,20 @@ export default class Polygons extends Component{
 				return true 
 			}
 			else{
+				console.log("emptyPoly",this.coordinatesLine)
+				if(it.length){
+					this.props.setEmptyPolygon({
+						player: this.player,
+						polygons: it
+					});
+				}				
 				return false
 			}
-		})
+		});
+		if(this.coordinatesLine.length){
 
-		this.props.setPolygons(this.coordinatesLine, this.player);
+			this.props.setPolygons(this.coordinatesLine, this.player);
+		}		
 	}
 
 	opponentDotClick(){
@@ -206,14 +213,10 @@ export default class Polygons extends Component{
 	}
 
 	calcPoly(){ // start
-
-		
 		
 		if(this.props.move != this.player){
 
-			// console.log(this.player,this.props.move)
-
-			console.log(this.props.clickedDot)
+			// console.log(this.props.clickedDot)
 
 			for(let I in this.props.dots){ 
 
@@ -239,21 +242,17 @@ export default class Polygons extends Component{
 
 			if(lastDots.length){
 
-				// let lastDot = lastDots[0];
 				lastDots.forEach((it) => {
 
 					this.coordinatesLine.push([it]);
 					this.findPathRecursion(it);
-
-					// lastDot = it.d < lastDots[0].d ? it : lastDot;
-				});
-				
+				});				
 			} 		
 		}
 		// for opponent dots
 		else if( this.props.clickedDot.color == !this.player ){
 
-			this.opponentDotClick()
+			this.opponentDotClick();
 		}
 	}
 
@@ -267,14 +266,14 @@ export default class Polygons extends Component{
 		this.deleteEmptyPolygons();
 
 		let polygons = this.props.polygons[this.player].map((it,ind) => {
-
 			
-
 			let coords = [];
 
 			it.forEach((item) => {
+
 				coords.push(item.x,item.y);
 			})
+
 			return 	(<Line key={ind} 
 						points={ coords }
 						fill={ this.player ? "rgba(255, 0, 0, 0.3)" : "rgba(0, 0, 255, 0.3)" }

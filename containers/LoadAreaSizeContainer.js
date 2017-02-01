@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import * as actions from "../actions/actions";
 import { connect } from "react-redux";
-import SetPlayField from "./../components/SetPlayField";
+import SetFieldSize from "./../components/SetFieldSize";
 
-class LoadingAreaContainer extends Component{
+class LoadAreaSizeContainer extends Component{
 
 	constructor(props) {
 		super(props)
@@ -20,7 +20,11 @@ class LoadingAreaContainer extends Component{
 
 		return (
 			<div>
-				<SetPlayField />
+				<SetFieldSize size={ this.props.size }
+								dots={ this.props.dots }
+								step={ this.props.step }
+								setFieldSize={ this.props.setFieldSize }
+								/>
 				{/* form component */}
 			</div>
 		)
@@ -37,7 +41,7 @@ function mapStateToProps (state) {
 }
 
 export default connect( mapStateToProps, {
-		loadStore: actions.loadStore
-	})(LoadingAreaContainer);
+		setFieldSize: actions.setFieldSize
+	})(LoadAreaSizeContainer);
 
 // connect store

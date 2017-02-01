@@ -10,7 +10,7 @@ import * as actions from "./actions/actions";
 
 const store = configureStore();
 
-store.dispatch(actions.setFieldSize(10, 10)); //init
+store.dispatch(actions.setFieldSize(39, 32)); //init
 
 render(
 	<Provider store={ store }>

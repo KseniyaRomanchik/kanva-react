@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import * as actions from "../actions/actions";
 import { connect } from "react-redux";
 
-class SizeFormContainer extends Component{
+class SetGameContainer extends Component{
 
 	constructor(props) {
 		super(props);
@@ -29,7 +29,7 @@ function mapStateToProps (state) {
 
 export default connect( mapStateToProps, {
 		setFieldSize: actions.setFieldSize
-	})(SizeFormContainer);
+	})(SetGameContainer);
 
 
 // connect store

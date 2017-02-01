@@ -65,7 +65,7 @@ export default class Polygons extends Component{
 
 	findPathRecursion(lastDotForPath){ // fill cordinatesLine with closed poly's dots
 	
-		this.findClosestDots(lastDotForPath).some((it) => {
+		this.findClosestDots(lastDotForPath).filter((it) => {
 
 			if(it && it.d !== undefined && 
 			lastDotForPath.d == (it.d + 1) && 
@@ -77,7 +77,7 @@ export default class Polygons extends Component{
 					return true
 				}
 
-				if("x" in it){
+				if("indexX" in it){
 					this.findPathRecursion(it);	
 				}								
 			}
@@ -85,9 +85,7 @@ export default class Polygons extends Component{
 		return true
 	}	
 
-	deleteEmptyPolygons(){ // check existing opponent's dots into polygon
-
-	
+	deleteEmptyPolygons(){ // sort polygons (empty and full)
 
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
@@ -190,7 +188,6 @@ export default class Polygons extends Component{
 				return true 
 			}
 			else{
-				console.log("emptyPoly",this.coordinatesLine)
 				if(it.length){
 					this.props.setEmptyPolygon({
 						player: this.player,
@@ -200,6 +197,8 @@ export default class Polygons extends Component{
 				return false
 			}
 		});
+
+		
 		if(this.coordinatesLine.length){
 
 			this.props.setPolygons(this.coordinatesLine, this.player);
@@ -256,11 +255,38 @@ export default class Polygons extends Component{
 		}
 	}
 
+	getPolygonArea(polygonsArr){
+		let x = [];
+		let y = [];
+		let summ1 = [];
+		let summ2 = [];
+		polygonsArr.push(polygonsArr[0]);
+
+		polygonsArr.forEach((it, ind, arr) => {
+
+			x.push(+it.indexX);
+			y.push(+it.indexY);
+
+			if(ind + 1 < arr.length){
+
+				summ1.push(+it.indexX * +arr[ind + 1].indexY);
+				summ2.push(+it.indexY * +arr[ind + 1].indexX);
+			}	
+		});
+
+		summ1 = summ1.reduce((prev,curr) => {
+			return prev + curr;
+		});
+		summ2 = summ2.reduce((prev,curr) => {
+			return prev + curr;
+		});
+
+		return Math.abs((summ1 - summ2)/2);
+	}
+
 	render(){
 
 		console.log("jj");
-
-		// if(!this.player && this.props.clickedDot) console.log(this.props.clickedDot)
 		
 		this.calcPoly(this.props.clickedDot);
 		this.deleteEmptyPolygons();
@@ -283,7 +309,7 @@ export default class Polygons extends Component{
 		});
 
 		return (
-			<Group x={this.props.step/2} y={this.props.step/2} >
+			<Group>
 				{ polygons }
 			</ Group>
 		)

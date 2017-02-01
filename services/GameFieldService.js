@@ -19,7 +19,7 @@ export default class GameFieldService {
 				indexY : y/step,
 				
 				color: "", // 0 - blue,1 - red
-				d: null,
+				d: undefined,
 				captured: false,
 				intoPoly: false,
 				inPolyBorder: false

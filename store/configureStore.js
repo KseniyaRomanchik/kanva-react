@@ -1,6 +1,7 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "../reducers";
 import thunk from "redux-thunk";
+import DevTools from "../containers/DevTools";
 
 // const enhancer = compose(
 //   // Middleware you want to use in development:
@@ -9,9 +10,15 @@ import thunk from "redux-thunk";
 //   DevTools.instrument()
 // );
 
-export default function configureStore() {
+export default function configureStore(initialState) {
 
-	const store = createStore(rootReducer, applyMiddleware(thunk));
+	const enhancer = compose(
+		applyMiddleware(thunk),
+	window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument()
+);
+// const store = createStore(rootReducer, defaultState, enhancers);
+
+	const store = createStore(rootReducer, initialState, enhancer);
 
 	if(module.hot) {
 

@@ -14,6 +14,15 @@ class PolygonsContainer extends Component{
 
 		return (   
             <Layer>
+                <Polygons player={ 1 } 
+                    dots={ this.props.dots } 
+                    move={ this.props.move.player } 
+                    polygons={ this.props.polygons }
+                    step={ this.props.step } 
+                    setNewDotProperty={ this.props.setNewDotProperty }
+                    clickedDot={ this.props.move.clickedDot.color ? this.props.move.clickedDot : {} } 
+                    setPolygons={ this.props.setPolygons }
+                    polygons = { this.props.polygons }/>
                 <Polygons player={ 0 } 
                     dots={ this.props.dots } 
                     move={ this.props.move.player } 
@@ -27,6 +36,8 @@ class PolygonsContainer extends Component{
 		)
 	}
 }
+
+
 
 function mapStateToProps (state) {
 	

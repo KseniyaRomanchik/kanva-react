@@ -7,17 +7,17 @@ export default class PlayField extends Component {
 	constructor(props){
 		super(props)
 
-		this.props.dots["id-0-2"].color = 0;
-		this.props.dots["id-0-1"].color = 0;
-		this.props.dots["id-0-4"].color = 0;
-		this.props.dots["id-2-1"].color = 0;
-		this.props.dots["id-2-2"].color = 0;
-		this.props.dots["id-2-4"].color = 0;
-		this.props.dots["id-1-0"].color = 0;
-		this.props.dots["id-1-1"].color = 0;
-		this.props.dots["id-1-5"].color = 0;
-		this.props.dots["id-1-2"].color = 1;
-		this.props.dots["id-1-4"].color = 1;
+		this.props.dots["id-0-2"].color = 1;
+		this.props.dots["id-0-1"].color = 1;
+		this.props.dots["id-0-4"].color = 1;
+		this.props.dots["id-2-1"].color = 1;
+		this.props.dots["id-2-2"].color = 1;
+		this.props.dots["id-2-4"].color = 1;
+		this.props.dots["id-1-0"].color = 1;
+		this.props.dots["id-1-1"].color = 1;
+		this.props.dots["id-1-5"].color = 1;
+		this.props.dots["id-1-2"].color = 0;
+		this.props.dots["id-1-4"].color = 0;
 	}
 
 	identyPlayer(e){
@@ -27,9 +27,9 @@ export default class PlayField extends Component {
 		if(this.props.dots[id].color === ""){	
 
 			let dotid = this.props.dots[id];
-			
 			dotid.color = this.props.move.player;			
 			dotid.d = 0; 
+			// console.log("clicked",dotid)
 			this.props.setNewDotProperty(dotid, id);
 			this.props.setPlayer({ 
 				move : { 
@@ -42,7 +42,6 @@ export default class PlayField extends Component {
 
 	render(){
 		// console.log(this.props.dots["id-0-0"])
-		console.log("circlesReload")
 
 		let dots = [],
 			i = 0;

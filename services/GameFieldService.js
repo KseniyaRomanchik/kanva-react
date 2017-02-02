@@ -24,12 +24,12 @@ export default class GameFieldService {
 				intoPoly: false,
 				inPolyBorder: false
 			};
-			if((x/step) % 2 && (y/step) % 3){
-				dots[`id-${x/step}-${y/step}`].color = 1;
-			}
-			if((x/step) % 3 && (y/step) % 2){
-				dots[`id-${x/step}-${y/step}`].color = 0;
-			}
+			// if((x/step) % 2 && (y/step) % 3){
+			// 	dots[`id-${x/step}-${y/step}`].color = 1;
+			// }
+			// if((x/step) % 3 && (y/step) % 2){
+			// 	dots[`id-${x/step}-${y/step}`].color = 0;
+			// }
 		}
 		return dots;
 	}

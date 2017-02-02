@@ -39,13 +39,18 @@ export default function fieldState(state = initialState, action) {
 		case constants.SET_EMPTY_POLYGON: {
 
 			let key = "emptyPoly" + action.payload.player;
-
 			state.polygons[key].push(action.payload.polygons);
 			
 			return Object.assign({}, state);
 		}
 
 		case constants.SET_FIELD_SIZE: {
+
+			// let polygons = { polygons: initialState.polygons }
+			// state.currentMove = initialState.currentMove;
+			// state.dots = initialState.dots;
+
+			// console.log(state.polygons["0"].length)
 
 			return Object.assign({}, state, action.payload);
 		}

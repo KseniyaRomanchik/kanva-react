@@ -5,26 +5,16 @@ import SetFieldSize from "./../components/SetFieldSize";
 
 class SetAreaSizeContainer extends Component{
 
-	constructor(props) {
-		super(props)
-		// width
-		// height			
-	}
-
 	render(){
-
-		
-
-		// changeSizeInStoreEvent(){}
-
 
 		return (
 			<div>
 				<SetFieldSize size={ this.props.size }
 								step={ this.props.step }
 								setFieldSize={ this.props.setFieldSize }
+								setPolygon={ this.props.setPolygon }
+								setEmptyPolygon={ this.props.setEmptyPolygon }
 								/>
-				{/* form component */}
 			</div>
 		)
 	}
@@ -39,7 +29,9 @@ function mapStateToProps (state) {
 }
 
 export default connect( mapStateToProps, {
-		setFieldSize: actions.setFieldSize
+		setFieldSize: actions.setFieldSize,
+		setPolygon: actions.setPolygon,
+		setEmptyPolygon: actions.setEmptyPolygon
 	})(SetAreaSizeContainer);
 
 // connect store

@@ -75,6 +75,16 @@ export function setFieldSize(width, height, step) {
 				width,
 				height,
 				step
+			},
+			polygons:{
+				"0":[],
+				"1":[], 
+				"emptyPoly0": [],
+				"emptyPoly1": []
+			},
+			"currentMove": {
+				"player": 0,
+				"clickedDot": {}
 			}
 		}));
 	}

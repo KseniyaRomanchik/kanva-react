@@ -10,7 +10,6 @@ export default class Polygons extends Component{
 		this.step = this.props.step;
 
 		this.coordinatesLine = [];
-		this.dots = this.props.dots;
 	}
 
 	findClosestDots(dot){ // all dots
@@ -39,10 +38,10 @@ export default class Polygons extends Component{
 					!it.captured ){
 					
 					let dotId = `id-${it.indexX}-${it.indexY}`;
-					let positionedDot = this.dots[dotId];
+					let positionedDot = this.props.dots[dotId];
 
 					positionedDot.d = dotChecked.d + 1;
-					this.props.setNewDotProperty(positionedDot,dotId);								
+					this.props.setNewDotProperty(positionedDot,dotId);	
 					this.markClosestDot(it);
 					return true 									
 				}
@@ -286,6 +285,7 @@ export default class Polygons extends Component{
 
 	render(){
 
+		this.coordinatesLine = [];
 		console.log("jj");
 		
 		this.calcPoly(this.props.clickedDot);

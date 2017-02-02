@@ -14,6 +14,8 @@ export default class SetFieldSize extends Component{
 	setFieldSize(){
 
 		this.props.setFieldSize(this.state.width,this.state.height,this.props.step);
+		// this.props.setEmptyPolygon(move)
+		// this.props.setPolygons(coordLine, player)
 	}
 
 	setWidth(e){
@@ -31,8 +33,6 @@ export default class SetFieldSize extends Component{
 	}
 
 	render(){
-
-		
 
 		return (
 			<div>

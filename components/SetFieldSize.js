@@ -18,7 +18,7 @@ export default class SetFieldSize extends Component{
 		this.setState({
 			width: this.props.size.width,
 			height: this.props.size.height
-		})
+		});
 	}
 
 	setWidth(e){
@@ -40,8 +40,8 @@ export default class SetFieldSize extends Component{
 		return (
 			<div>
 				<form>
-					<input type="number" id="width" placeholder="Width" defaultValue={ this.state.width } onInput={ this.setWidth.bind(this) } />
-					<input type="number" id="height" placeholder="Height" defaultValue={ this.state.height } onInput={ this.setHeight.bind(this) } />
+					<input type="number" max="2" id="width" placeholder="Width" defaultValue={ this.state.width } onInput={ this.setWidth.bind(this) } />
+					<input type="number" max="2" id="height" placeholder="Height" defaultValue={ this.state.height } onInput={ this.setHeight.bind(this) } />
 					<button type="button" onClick={ this.setFieldSize.bind(this) }>Set size</button>
 				</form>
 				<span>{`Current Field Size: ${ this.props.size.width }-${ this.props.size.height }`}</span>

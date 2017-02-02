@@ -10,8 +10,7 @@ class App extends Component{
 		return (
 			<div>
 				<SetAreaSizeContainer /> {/* <gameField> -- container*/}
-				<GameFieldContainer /> {/* <form choose size> -- container*/}
-				
+				<GameFieldContainer /> {/* <form choose size> -- container*/}			
 				<SetGameContainer /> {/* <textarea for json> -- container*/}
 			</div>
 		)

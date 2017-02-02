@@ -6,7 +6,8 @@ export default class LoadGame extends Component{
         super(props);
         this.state = {
             game: {},
-            currentGame: this.props.store
+            currentGame: this.props.store,
+            error: ""
         }
     }
 
@@ -22,19 +23,35 @@ export default class LoadGame extends Component{
     }
 
     addGameToState(e){
-
-        let json = JSON.parse(e.target.value);
         
-        this.setState({
-            game: json
-        });
+        let span = document.createElement("span");
+        span.remove();
+
+        if(e.target.value){
+            try{
+                let json = JSON.parse(e.target.value);                
+                this.setState({
+                    game: json,
+                    error: ""
+                });
+            }
+            catch(err){
+                
+                this.setState({
+                    error: "Incorrect JSON"
+                });
+            }  
+        }
     }
 
 	render(){
 
 		return (
 			<div>
-                <textarea cols="40" rows="40" id="load" defaultValue={ JSON.stringify(this.props.store) } onInput={ this.addGameToState.bind(this) }></textarea>
+                <div><span className="error">{ this.state.error }</span></div>
+                <div>
+                    <textarea cols="40" rows="40" id="load" onInput={ this.addGameToState.bind(this) }></textarea>
+                </div>
 				<button type="button" onClick={ this.loadGame.bind(this) }>Load Game</button>
                 <button type="button" onClick={ this.downloadGame.bind(this) }>Download Game</button>
 			</div>

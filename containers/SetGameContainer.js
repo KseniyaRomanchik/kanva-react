@@ -25,6 +25,3 @@ function mapStateToProps () {
 export default connect( mapStateToProps, {
 		setGame: actions.setGame
 	})(SetGame);
-
-
-// connect store

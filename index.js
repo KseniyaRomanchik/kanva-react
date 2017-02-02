@@ -7,8 +7,7 @@ import App from "./containers/App";
 import * as actions from "./actions/actions";
 
 const store = configureStore();
-store.dispatch(actions.setFieldSize(39, 32, 25)); //init
-window.store = 
+store.dispatch(actions.setFieldSize(20, 15, 25)); //init
 
 render(
 	<Provider store={ store }>

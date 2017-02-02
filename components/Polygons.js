@@ -75,7 +75,6 @@ export default class Polygons extends Component{
 				if(it.d == 0){
 					return true
 				}
-
 				if("indexX" in it){
 					this.findPathRecursion(it);	
 				}								
@@ -115,8 +114,6 @@ export default class Polygons extends Component{
 					cols[item.indexX].push(item.indexY);
 				}			
 			});	
-
-			// console.log(it)
 
 			for( let I in rows ){	
 
@@ -194,7 +191,6 @@ export default class Polygons extends Component{
 				return false
 			}
 		});
-
 		
 		if(this.coordinatesLine.length){
 
@@ -284,8 +280,7 @@ export default class Polygons extends Component{
 	render(){
 
 		this.coordinatesLine = [];
-		console.log("jj");
-		console.log(JSON.stringify(this.props.polygons[this.player]));
+		// console.log("jj");
 		
 		this.calcPoly(this.props.clickedDot);
 		this.deleteEmptyPolygons();

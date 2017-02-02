@@ -58,7 +58,7 @@ export default class PlayField extends Component {
 
 			dots.push(
 				<Circle key={ i++ } 
-						radius={ 5 }
+						radius={ this.props.step/5 }
 						fill={ this.props.dots[I].color ? "red" : (this.props.dots[I].color === 0 ? "blue" : "#ddd" ) }
 						x={ this.props.dots[I].x }
 						y={ this.props.dots[I].y } />)

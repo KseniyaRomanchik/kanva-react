@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-import dots from "./fieldState";
+import dots from "./dotsGame";
 
 export default combineReducers({
 	dots

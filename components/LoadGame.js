@@ -17,17 +17,13 @@ export default class LoadGame extends Component{
 
     downloadGame(){
 
-        let textarea = document.getElementById("load");
-        textarea.value = this.props.store
-
-        // e.target.value = JSON.stringify(this.state.currentGame);
+        // let textarea = document.getElementById("load");
+        // textarea.value = JSON.stringify(this.props.store)
     }
 
     addGameToState(e){
 
         let json = JSON.parse(e.target.value);
-
-        console.log(json);
         
         this.setState({
             game: json
@@ -38,7 +34,7 @@ export default class LoadGame extends Component{
 
 		return (
 			<div>
-                <textarea cols="40" rows="40" id="load "onInput={ this.addGameToState.bind(this) }></textarea>
+                <textarea cols="40" rows="40" id="load" defaultValue={ JSON.stringify(this.props.store) } onInput={ this.addGameToState.bind(this) }></textarea>
 				<button type="button" onClick={ this.loadGame.bind(this) }>Load Game</button>
                 <button type="button" onClick={ this.downloadGame.bind(this) }>Download Game</button>
 			</div>

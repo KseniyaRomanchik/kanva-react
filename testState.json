@@ -1,0 +1,1708 @@
+{
+  "dots": {
+    "dots": {
+      "id-0-0": {
+        "x": 0,
+        "y": 0,
+        "indexX": 0,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-0": {
+        "x": 25,
+        "y": 0,
+        "indexX": 1,
+        "indexY": 0,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-0": {
+        "x": 50,
+        "y": 0,
+        "indexX": 2,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-0": {
+        "x": 75,
+        "y": 0,
+        "indexX": 3,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-0": {
+        "x": 100,
+        "y": 0,
+        "indexX": 4,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-0": {
+        "x": 125,
+        "y": 0,
+        "indexX": 5,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-0": {
+        "x": 150,
+        "y": 0,
+        "indexX": 6,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-0": {
+        "x": 175,
+        "y": 0,
+        "indexX": 7,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-0": {
+        "x": 200,
+        "y": 0,
+        "indexX": 8,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-0": {
+        "x": 225,
+        "y": 0,
+        "indexX": 9,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-0": {
+        "x": 250,
+        "y": 0,
+        "indexX": 10,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-0": {
+        "x": 275,
+        "y": 0,
+        "indexX": 11,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-0": {
+        "x": 300,
+        "y": 0,
+        "indexX": 12,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-0": {
+        "x": 325,
+        "y": 0,
+        "indexX": 13,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-0": {
+        "x": 350,
+        "y": 0,
+        "indexX": 14,
+        "indexY": 0,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-1": {
+        "x": 0,
+        "y": 25,
+        "indexX": 0,
+        "indexY": 1,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-1": {
+        "x": 25,
+        "y": 25,
+        "indexX": 1,
+        "indexY": 1,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-1": {
+        "x": 50,
+        "y": 25,
+        "indexX": 2,
+        "indexY": 1,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-1": {
+        "x": 75,
+        "y": 25,
+        "indexX": 3,
+        "indexY": 1,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-1": {
+        "x": 100,
+        "y": 25,
+        "indexX": 4,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-1": {
+        "x": 125,
+        "y": 25,
+        "indexX": 5,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-1": {
+        "x": 150,
+        "y": 25,
+        "indexX": 6,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-1": {
+        "x": 175,
+        "y": 25,
+        "indexX": 7,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-1": {
+        "x": 200,
+        "y": 25,
+        "indexX": 8,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-1": {
+        "x": 225,
+        "y": 25,
+        "indexX": 9,
+        "indexY": 1,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-1": {
+        "x": 250,
+        "y": 25,
+        "indexX": 10,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-1": {
+        "x": 275,
+        "y": 25,
+        "indexX": 11,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-1": {
+        "x": 300,
+        "y": 25,
+        "indexX": 12,
+        "indexY": 1,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-1": {
+        "x": 325,
+        "y": 25,
+        "indexX": 13,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-1": {
+        "x": 350,
+        "y": 25,
+        "indexX": 14,
+        "indexY": 1,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-2": {
+        "x": 0,
+        "y": 50,
+        "indexX": 0,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-2": {
+        "x": 25,
+        "y": 50,
+        "indexX": 1,
+        "indexY": 2,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-2": {
+        "x": 50,
+        "y": 50,
+        "indexX": 2,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-2": {
+        "x": 75,
+        "y": 50,
+        "indexX": 3,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-2": {
+        "x": 100,
+        "y": 50,
+        "indexX": 4,
+        "indexY": 2,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-2": {
+        "x": 125,
+        "y": 50,
+        "indexX": 5,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-2": {
+        "x": 150,
+        "y": 50,
+        "indexX": 6,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-2": {
+        "x": 175,
+        "y": 50,
+        "indexX": 7,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-2": {
+        "x": 200,
+        "y": 50,
+        "indexX": 8,
+        "indexY": 2,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-2": {
+        "x": 225,
+        "y": 50,
+        "indexX": 9,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-2": {
+        "x": 250,
+        "y": 50,
+        "indexX": 10,
+        "indexY": 2,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-2": {
+        "x": 275,
+        "y": 50,
+        "indexX": 11,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-2": {
+        "x": 300,
+        "y": 50,
+        "indexX": 12,
+        "indexY": 2,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-2": {
+        "x": 325,
+        "y": 50,
+        "indexX": 13,
+        "indexY": 2,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-2": {
+        "x": 350,
+        "y": 50,
+        "indexX": 14,
+        "indexY": 2,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-3": {
+        "x": 0,
+        "y": 75,
+        "indexX": 0,
+        "indexY": 3,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-3": {
+        "x": 25,
+        "y": 75,
+        "indexX": 1,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-3": {
+        "x": 50,
+        "y": 75,
+        "indexX": 2,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-3": {
+        "x": 75,
+        "y": 75,
+        "indexX": 3,
+        "indexY": 3,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-3": {
+        "x": 100,
+        "y": 75,
+        "indexX": 4,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-3": {
+        "x": 125,
+        "y": 75,
+        "indexX": 5,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-3": {
+        "x": 150,
+        "y": 75,
+        "indexX": 6,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-3": {
+        "x": 175,
+        "y": 75,
+        "indexX": 7,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-3": {
+        "x": 200,
+        "y": 75,
+        "indexX": 8,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-3": {
+        "x": 225,
+        "y": 75,
+        "indexX": 9,
+        "indexY": 3,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-3": {
+        "x": 250,
+        "y": 75,
+        "indexX": 10,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-3": {
+        "x": 275,
+        "y": 75,
+        "indexX": 11,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-3": {
+        "x": 300,
+        "y": 75,
+        "indexX": 12,
+        "indexY": 3,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-3": {
+        "x": 325,
+        "y": 75,
+        "indexX": 13,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-3": {
+        "x": 350,
+        "y": 75,
+        "indexX": 14,
+        "indexY": 3,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-4": {
+        "x": 0,
+        "y": 100,
+        "indexX": 0,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-4": {
+        "x": 25,
+        "y": 100,
+        "indexX": 1,
+        "indexY": 4,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-4": {
+        "x": 50,
+        "y": 100,
+        "indexX": 2,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-4": {
+        "x": 75,
+        "y": 100,
+        "indexX": 3,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-4": {
+        "x": 100,
+        "y": 100,
+        "indexX": 4,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-4": {
+        "x": 125,
+        "y": 100,
+        "indexX": 5,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-4": {
+        "x": 150,
+        "y": 100,
+        "indexX": 6,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-4": {
+        "x": 175,
+        "y": 100,
+        "indexX": 7,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-4": {
+        "x": 200,
+        "y": 100,
+        "indexX": 8,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-4": {
+        "x": 225,
+        "y": 100,
+        "indexX": 9,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-4": {
+        "x": 250,
+        "y": 100,
+        "indexX": 10,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-4": {
+        "x": 275,
+        "y": 100,
+        "indexX": 11,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-4": {
+        "x": 300,
+        "y": 100,
+        "indexX": 12,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-4": {
+        "x": 325,
+        "y": 100,
+        "indexX": 13,
+        "indexY": 4,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-4": {
+        "x": 350,
+        "y": 100,
+        "indexX": 14,
+        "indexY": 4,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-5": {
+        "x": 0,
+        "y": 125,
+        "indexX": 0,
+        "indexY": 5,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-5": {
+        "x": 25,
+        "y": 125,
+        "indexX": 1,
+        "indexY": 5,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-5": {
+        "x": 50,
+        "y": 125,
+        "indexX": 2,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-5": {
+        "x": 75,
+        "y": 125,
+        "indexX": 3,
+        "indexY": 5,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-5": {
+        "x": 100,
+        "y": 125,
+        "indexX": 4,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-5": {
+        "x": 125,
+        "y": 125,
+        "indexX": 5,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-5": {
+        "x": 150,
+        "y": 125,
+        "indexX": 6,
+        "indexY": 5,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-5": {
+        "x": 175,
+        "y": 125,
+        "indexX": 7,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-5": {
+        "x": 200,
+        "y": 125,
+        "indexX": 8,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-5": {
+        "x": 225,
+        "y": 125,
+        "indexX": 9,
+        "indexY": 5,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-5": {
+        "x": 250,
+        "y": 125,
+        "indexX": 10,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-5": {
+        "x": 275,
+        "y": 125,
+        "indexX": 11,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-5": {
+        "x": 300,
+        "y": 125,
+        "indexX": 12,
+        "indexY": 5,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-5": {
+        "x": 325,
+        "y": 125,
+        "indexX": 13,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-5": {
+        "x": 350,
+        "y": 125,
+        "indexX": 14,
+        "indexY": 5,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-6": {
+        "x": 0,
+        "y": 150,
+        "indexX": 0,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-6": {
+        "x": 25,
+        "y": 150,
+        "indexX": 1,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-6": {
+        "x": 50,
+        "y": 150,
+        "indexX": 2,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-6": {
+        "x": 75,
+        "y": 150,
+        "indexX": 3,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-6": {
+        "x": 100,
+        "y": 150,
+        "indexX": 4,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-6": {
+        "x": 125,
+        "y": 150,
+        "indexX": 5,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-6": {
+        "x": 150,
+        "y": 150,
+        "indexX": 6,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-6": {
+        "x": 175,
+        "y": 150,
+        "indexX": 7,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-6": {
+        "x": 200,
+        "y": 150,
+        "indexX": 8,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-6": {
+        "x": 225,
+        "y": 150,
+        "indexX": 9,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-6": {
+        "x": 250,
+        "y": 150,
+        "indexX": 10,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-6": {
+        "x": 275,
+        "y": 150,
+        "indexX": 11,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-6": {
+        "x": 300,
+        "y": 150,
+        "indexX": 12,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-6": {
+        "x": 325,
+        "y": 150,
+        "indexX": 13,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-6": {
+        "x": 350,
+        "y": 150,
+        "indexX": 14,
+        "indexY": 6,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-7": {
+        "x": 0,
+        "y": 175,
+        "indexX": 0,
+        "indexY": 7,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-7": {
+        "x": 25,
+        "y": 175,
+        "indexX": 1,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-7": {
+        "x": 50,
+        "y": 175,
+        "indexX": 2,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-7": {
+        "x": 75,
+        "y": 175,
+        "indexX": 3,
+        "indexY": 7,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-7": {
+        "x": 100,
+        "y": 175,
+        "indexX": 4,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-7": {
+        "x": 125,
+        "y": 175,
+        "indexX": 5,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-7": {
+        "x": 150,
+        "y": 175,
+        "indexX": 6,
+        "indexY": 7,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-7": {
+        "x": 175,
+        "y": 175,
+        "indexX": 7,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-7": {
+        "x": 200,
+        "y": 175,
+        "indexX": 8,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-7": {
+        "x": 225,
+        "y": 175,
+        "indexX": 9,
+        "indexY": 7,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-7": {
+        "x": 250,
+        "y": 175,
+        "indexX": 10,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-7": {
+        "x": 275,
+        "y": 175,
+        "indexX": 11,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-7": {
+        "x": 300,
+        "y": 175,
+        "indexX": 12,
+        "indexY": 7,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-7": {
+        "x": 325,
+        "y": 175,
+        "indexX": 13,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-7": {
+        "x": 350,
+        "y": 175,
+        "indexX": 14,
+        "indexY": 7,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-8": {
+        "x": 0,
+        "y": 200,
+        "indexX": 0,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-8": {
+        "x": 25,
+        "y": 200,
+        "indexX": 1,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-8": {
+        "x": 50,
+        "y": 200,
+        "indexX": 2,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-8": {
+        "x": 75,
+        "y": 200,
+        "indexX": 3,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-8": {
+        "x": 100,
+        "y": 200,
+        "indexX": 4,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-8": {
+        "x": 125,
+        "y": 200,
+        "indexX": 5,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-8": {
+        "x": 150,
+        "y": 200,
+        "indexX": 6,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-8": {
+        "x": 175,
+        "y": 200,
+        "indexX": 7,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-8": {
+        "x": 200,
+        "y": 200,
+        "indexX": 8,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-8": {
+        "x": 225,
+        "y": 200,
+        "indexX": 9,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-8": {
+        "x": 250,
+        "y": 200,
+        "indexX": 10,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-8": {
+        "x": 275,
+        "y": 200,
+        "indexX": 11,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-8": {
+        "x": 300,
+        "y": 200,
+        "indexX": 12,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-8": {
+        "x": 325,
+        "y": 200,
+        "indexX": 13,
+        "indexY": 8,
+        "color": 1,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-8": {
+        "x": 350,
+        "y": 200,
+        "indexX": 14,
+        "indexY": 8,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-0-9": {
+        "x": 0,
+        "y": 225,
+        "indexX": 0,
+        "indexY": 9,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-1-9": {
+        "x": 25,
+        "y": 225,
+        "indexX": 1,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-2-9": {
+        "x": 50,
+        "y": 225,
+        "indexX": 2,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-3-9": {
+        "x": 75,
+        "y": 225,
+        "indexX": 3,
+        "indexY": 9,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-4-9": {
+        "x": 100,
+        "y": 225,
+        "indexX": 4,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-5-9": {
+        "x": 125,
+        "y": 225,
+        "indexX": 5,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-6-9": {
+        "x": 150,
+        "y": 225,
+        "indexX": 6,
+        "indexY": 9,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-7-9": {
+        "x": 175,
+        "y": 225,
+        "indexX": 7,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-8-9": {
+        "x": 200,
+        "y": 225,
+        "indexX": 8,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-9-9": {
+        "x": 225,
+        "y": 225,
+        "indexX": 9,
+        "indexY": 9,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-10-9": {
+        "x": 250,
+        "y": 225,
+        "indexX": 10,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-11-9": {
+        "x": 275,
+        "y": 225,
+        "indexX": 11,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-12-9": {
+        "x": 300,
+        "y": 225,
+        "indexX": 12,
+        "indexY": 9,
+        "color": "",
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-13-9": {
+        "x": 325,
+        "y": 225,
+        "indexX": 13,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      },
+      "id-14-9": {
+        "x": 350,
+        "y": 225,
+        "indexX": 14,
+        "indexY": 9,
+        "color": 0,
+        "captured": false,
+        "intoPoly": false,
+        "inPolyBorder": false
+      }
+    },
+    "fieldSize": {
+      "width": 15,
+      "height": 10,
+      "step": 25
+    },
+    "currentMove": {
+      "player": 0,
+      "clickedDot": {
+        
+      }
+    },
+    "polygons": {
+      "0": [
+            [{
+                "x": 175,
+                "y": 25,
+                "indexX": 7,
+                "indexY": 1,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 150,
+                "y": 25,
+                "indexX": 6,
+                "indexY": 1,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 125,
+                "y": 25,
+                "indexX": 5,
+                "indexY": 1,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 100,
+                "y": 50,
+                "indexX": 4,
+                "indexY": 2,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 125,
+                "y": 75,
+                "indexX": 5,
+                "indexY": 3,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 150,
+                "y": 75,
+                "indexX": 6,
+                "indexY": 3,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 175,
+                "y": 75,
+                "indexX": 7,
+                "indexY": 3,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            },
+            {
+                "x": 200,
+                "y": 50,
+                "indexX": 8,
+                "indexY": 2,
+                "color": 0,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true
+            }]
+        ],
+      "1": [
+            [{
+                "x": 75,
+                "y": 50,
+                "indexX": 3,
+                "indexY": 2,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 8
+            },
+            {
+                "x": 50,
+                "y": 50,
+                "indexX": 2,
+                "indexY": 2,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 7
+            },
+            {
+                "x": 25,
+                "y": 25,
+                "indexX": 1,
+                "indexY": 1,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 6
+            },
+            {
+                "x": 0,
+                "y": 50,
+                "indexX": 0,
+                "indexY": 2,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 5
+            },
+            {
+                "x": 0,
+                "y": 75,
+                "indexX": 0,
+                "indexY": 3,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 4
+            },
+            {
+                "x": 0,
+                "y": 100,
+                "indexX": 0,
+                "indexY": 4,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 3
+            },
+            {
+                "x": 25,
+                "y": 125,
+                "indexX": 1,
+                "indexY": 5,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 2
+            },
+            {
+                "x": 50,
+                "y": 100,
+                "indexX": 2,
+                "indexY": 4,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 1
+            },
+            {
+                "x": 75,
+                "y": 75,
+                "indexX": 3,
+                "indexY": 3,
+                "color": 1,
+                "captured": false,
+                "intoPoly": false,
+                "inPolyBorder": true,
+                "d": 0
+            }]
+        ],
+      "emptyPoly0": [
+        
+      ],
+      "emptyPoly1": [
+        
+      ]
+    }
+  }
+}

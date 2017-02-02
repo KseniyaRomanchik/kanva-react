@@ -88,8 +88,6 @@ export default class Polygons extends Component{
 
 		this.coordinatesLine = this.coordinatesLine.filter((it) => {
 
-			// console.log("in")
-
 			let rows = {};
 			let cols = {};
 			let oppDotCheck = 0;
@@ -287,6 +285,7 @@ export default class Polygons extends Component{
 
 		this.coordinatesLine = [];
 		console.log("jj");
+		console.log(JSON.stringify(this.props.polygons[this.player]));
 		
 		this.calcPoly(this.props.clickedDot);
 		this.deleteEmptyPolygons();

@@ -5,7 +5,8 @@ export default class LoadGame extends Component{
     constructor(props){
         super(props);
         this.state = {
-            game: {}
+            game: {},
+            currentGame: this.props.store
         }
     }
 
@@ -13,6 +14,14 @@ export default class LoadGame extends Component{
 
         this.props.setGame(this.state.game);
 	}
+
+    downloadGame(){
+
+        let textarea = document.getElementById("load");
+        textarea.value = this.props.store
+
+        // e.target.value = JSON.stringify(this.state.currentGame);
+    }
 
     addGameToState(e){
 
@@ -29,8 +38,9 @@ export default class LoadGame extends Component{
 
 		return (
 			<div>
-                <textarea cols="40" rows="40" onInput={ this.addGameToState.bind(this) }></textarea>
+                <textarea cols="40" rows="40" id="load "onInput={ this.addGameToState.bind(this) }></textarea>
 				<button type="button" onClick={ this.loadGame.bind(this) }>Load Game</button>
+                <button type="button" onClick={ this.downloadGame.bind(this) }>Download Game</button>
 			</div>
 		)
 	}

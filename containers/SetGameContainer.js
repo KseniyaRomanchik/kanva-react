@@ -15,10 +15,10 @@ class SetGame extends Component{
 	}
 }
 
-function mapStateToProps (state) {
+function mapStateToProps () {
 	
 	return {
-		size: state.dots.fieldSize
+		
 	}
 }
 

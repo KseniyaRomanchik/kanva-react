@@ -5,7 +5,8 @@ let initialState = {
 	"fieldSize": { 
 		"width": 0, 
 		"height": 0,
-		"step": 0
+		"step": 0,
+		"timer": 0
 	}, 
 	"currentMove": {
 		"player": 0,

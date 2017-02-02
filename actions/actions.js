@@ -63,7 +63,7 @@ function setFieldAction(fieldData) {
 	}
 }
 
-export function setFieldSize(width, height, step) {
+export function setFieldSize(width, height, step, timer = 1 * 60 * 1000) {
 
 	let dots = GameFieldService.setField(width, height, step);
 
@@ -74,7 +74,8 @@ export function setFieldSize(width, height, step) {
 			fieldSize: {
 				width,
 				height,
-				step
+				step,
+				timer
 			},
 			polygons:{
 				"0":[],

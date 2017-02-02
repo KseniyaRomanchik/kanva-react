@@ -15,3 +15,5 @@ render(
 	</ Provider>,
 	document.getElementById("container")
 );       
+
+export default store

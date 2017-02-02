@@ -16,7 +16,8 @@ class GameFieldContainer extends Component{
 					width={ width } 
 					height={ height } 
 					dots={ this.props.dots } 
-					setPlayer={ this.props.setPlayer }  
+					setPlayer={ this.props.setPlayer }
+					timer={ this.props.size.timer }  
 					step={ this.props.step }
 					setNewDotProperty={ this.props.setNewDotProperty }
 					move={this.props.move}

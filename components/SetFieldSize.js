@@ -7,13 +7,20 @@ export default class SetFieldSize extends Component{
 
 		this.state = {
 			width: this.props.size.width,
-			height: this.props.size.height
-		}					
+			height: this.props.size.height,
+			timer: this.props.size.timer
+		}		
+		this.timer = {
+			move: {},
+			global: {}
+		};
+
+		this.time = this.props.size.timer;			
 	}
 
 	setFieldSize(){
 
-		this.props.setFieldSize(this.state.width,this.state.height,this.props.step);
+		this.props.setFieldSize(this.state.width,this.state.height,this.props.step,this.state.timer);
 
 		this.setState({
 			width: this.props.size.width,
@@ -35,7 +42,38 @@ export default class SetFieldSize extends Component{
 		});
 	}
 
+	setTime(e){
+
+		this.setState({
+			timer: e.target.value * 60 * 1000
+		});
+	}
+
+	decreaseTimer(){
+
+		this.timer.move = setTimeout(() => {
+			this.setState({
+				timer: this.state.timer - 1000
+			});
+		}, 1000);	
+
+		if(this.state.timer <= 0){
+			this.setState({
+				timer: this.props.size.timer
+			});
+		}
+	}
+
 	render(){
+
+		clearTimeout(this.timer.global);
+		clearTimeout(this.timer.move);
+		this.decreaseTimer();
+
+		let timer = {};
+		let time = new Date(this.state.timer);
+		timer.min = time.getMinutes();
+		timer.sec = time.getSeconds();
 
 		return (
 			<div>
@@ -44,7 +82,7 @@ export default class SetFieldSize extends Component{
 					<input type="number" max="2" id="height" placeholder="Height" defaultValue={ this.state.height } onInput={ this.setHeight.bind(this) } />
 					<button type="button" onClick={ this.setFieldSize.bind(this) }>Set size</button>
 				</form>
-				<span>{`Current Field Size: ${ this.props.size.width }-${ this.props.size.height }`}</span>
+				<span>{`Current Field Size: ${ this.props.size.width }-${ this.props.size.height }, timer - ${ timer.min }:${ timer.sec }`}</span>
 			</div>
 		)
 	}

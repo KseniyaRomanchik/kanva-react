@@ -7,7 +7,7 @@ export default class PlayField extends Component {
 	constructor(props){
 		super(props)
 
-		
+		this.timer = {};
 
 		this.props.dots["id-0-2"].color = 1;
 		this.props.dots["id-0-1"].color = 1;
@@ -27,6 +27,19 @@ export default class PlayField extends Component {
 		// this.props.dots["id-1-3"].color = 1;
 		// this.props.dots["id-0-2"].color = 1;
 		// this.props.dots["id-0-1"].color = 1;
+	}
+
+	playerTimer(){
+
+		this.timer = setTimeout(() => {
+			
+			this.props.setPlayer({ 
+				move : { 
+					player: this.props.move.player ? 0 : 1, 
+					clickedDot: {}
+				}
+			});
+		}, this.props.timer);
 	}
 
 	identyPlayer(e){
@@ -50,7 +63,8 @@ export default class PlayField extends Component {
 
 	render(){
 		// console.log(this.props.dots["id-0-0"])
-
+		clearTimeout(this.timer);
+		this.playerTimer();
 		let dots = [],
 			cells = [],
 			i = 0;

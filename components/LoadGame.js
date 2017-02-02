@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import store from "./../index"
 
 export default class LoadGame extends Component{
 
@@ -6,7 +7,7 @@ export default class LoadGame extends Component{
         super(props);
         this.state = {
             game: {},
-            currentGame: this.props.store,
+            currentGame: "",
             error: ""
         }
     }
@@ -15,11 +16,20 @@ export default class LoadGame extends Component{
 
         this.props.setGame(this.state.game);
 	}
+    
 
     downloadGame(){
 
-        // let textarea = document.getElementById("load");
-        // textarea.value = JSON.stringify(this.props.store)
+        this.setState({
+            currentGame: JSON.stringify(store.getState())
+        });
+    }
+
+    changeDownload(e){
+        
+        this.setState({
+            currentGame: e.target.value
+        });
     }
 
     addGameToState(e){
@@ -46,11 +56,14 @@ export default class LoadGame extends Component{
 
 	render(){
 
+        console.log("jkjh")
+
 		return (
 			<div>
                 <div><span className="error">{ this.state.error }</span></div>
                 <div>
-                    <textarea cols="40" rows="40" id="load" onInput={ this.addGameToState.bind(this) }></textarea>
+                    <textarea cols="40" rows="40" id="load" onInput={ this.addGameToState.bind(this) } />
+                    <textarea cols="40" rows="40" value={ this.state.currentGame } onChange={ this.changeDownload.bind(this) } id="download" />
                 </div>
 				<button type="button" onClick={ this.loadGame.bind(this) }>Load Game</button>
                 <button type="button" onClick={ this.downloadGame.bind(this) }>Download Game</button>

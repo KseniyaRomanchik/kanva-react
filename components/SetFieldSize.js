@@ -78,14 +78,12 @@ export default class SetFieldSize extends Component{
 					<input type="number" 
 							min="1"
 							max="2" id="width" 
-							placeholder="Width" 
-							defaultValue={ this.state.width } 
+							placeholder="Width"  
 							onInput={ this.setWidth.bind(this) } />
 					<input type="number" 
 							min="1"
 							max="2" id="height" 
-							placeholder="Height" 
-							defaultValue={ this.state.height } 
+							placeholder="Height"  
 							onInput={ this.setHeight.bind(this) } />
 					<button type="button" 
 							onClick={ this.setFieldSize.bind(this) }>

@@ -8,7 +8,6 @@ export default class Polygons extends Component{
 
 		this.player = this.props.player;
 		this.step = this.props.step;
-
 		this.coordinatesLine = [];
 	}
 
@@ -31,7 +30,7 @@ export default class Polygons extends Component{
 	markClosestDot(dotChecked){ // give names d0 d1 d2 d3 ..., mark only my dots
 
 		if(dotChecked){
-			this.findClosestDots(dotChecked).forEach((it) => {
+			for(let it of this.findClosestDots(dotChecked)) {
 				if( !(typeof it == "undefined") && 
 					it.color === dotChecked.color && 
 					(it.d === undefined) && !it.intoPoly && 
@@ -45,7 +44,7 @@ export default class Polygons extends Component{
 					this.markClosestDot(it);
 					return true 									
 				}
-			});
+			}
 		}
 	}
 
@@ -91,7 +90,7 @@ export default class Polygons extends Component{
 			let cols = {};
 			let oppDotCheck = 0;
 
-			it.forEach((item) => { // create objects with cols and rows 
+			for(let item of it){ // create objects with cols and rows 
 
 				item.inPolyBorder = true;
 				this.props.setNewDotProperty(item,`id-${item.indexX}-${item.indexY}`)				
@@ -113,7 +112,7 @@ export default class Polygons extends Component{
 					cols[item.indexX] = [];				
 					cols[item.indexX].push(item.indexY);
 				}			
-			});	
+			}
 
 			for( let I in rows ){	
 
@@ -121,8 +120,8 @@ export default class Polygons extends Component{
 				let maxX = Math.max.apply(null, rows[I]);
 				let minXCounter = minX;
 
-				rows[I].forEach(() => {
-
+				for(let i of rows[I]){
+					i
 					minXCounter += 1
 					let dotId = `id-${minXCounter}-${I}`;					
 
@@ -142,7 +141,7 @@ export default class Polygons extends Component{
 						capturedDot.intoPoly = true; 
 						this.props.setNewDotProperty(capturedDot, dotId);
 					}
-				});
+				}
 			}
 
 			for( let I in cols ){	
@@ -151,7 +150,8 @@ export default class Polygons extends Component{
 				let maxY = Math.max.apply(null, cols[I]);
 				let minYCounter = minY;
 
-				cols[I].forEach(() => {
+				for(let i of cols[I]){
+					i
 
 					minYCounter += 1;
 					let dotId = `id-${I}-${minYCounter}`;	
@@ -175,7 +175,7 @@ export default class Polygons extends Component{
 						capturedDot.intoPoly = true; 
 						this.props.setNewDotProperty(capturedDot, dotId);
 					}
-				});
+				}
 			}
 			
 			if(oppDotCheck == 2){
@@ -234,11 +234,11 @@ export default class Polygons extends Component{
 
 			if(lastDots.length){
 
-				lastDots.forEach((it) => {
+				for(let it of lastDots){
 
 					this.coordinatesLine.push([it]);
 					this.findPathRecursion(it);
-				});				
+				}				
 			} 		
 		}
 		// for opponent dots
@@ -289,10 +289,10 @@ export default class Polygons extends Component{
 			
 			let coords = [];
 
-			it.forEach((item) => {
+			for( let item of it){
 
 				coords.push(item.x,item.y);
-			})
+			}
 
 			return 	(<Line key={ind} 
 						points={ coords }

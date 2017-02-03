@@ -35,7 +35,7 @@ export default class PlayField extends Component {
 
 		if(this.props.dots[id].color === ""){	
 
-			let dotid = this.props.dots[id];
+			let dotid = Object.assign({}, this.props.dots[id]);
 			dotid.color = this.props.currentMove.player;			
 			dotid.d = 0; 
 			this.props.setNewDotProperty(dotid, id);

@@ -57,8 +57,6 @@ export default function dots(state = initialState, action) {
 
 		case constants.SET_PLAYER: {
 
-			console.log(action.payload)
-
 			return Object.assign({}, state, action.payload);
 		}
 		

@@ -1,22 +1,23 @@
 import constants from "./../constants/DotsConstants"
 
 let initialState = {
-	"dots": {},
-	"fieldSize": { 
-		"width": 0, 
-		"height": 0,
-		"step": 0,
-		"timer": 0
+	dots: {},
+	fieldSize: { 
+		width: 0, 
+		height: 0,
+		step: 0,
+		timer: 0
 	}, 
-	"currentMove": {
-		"player": 0,
-		"clickedDot": {}
+	currentMove: {
+		player: 0,
+		clickedDot: {},
+		timer: 0
 	},
-	"polygons": {
-		"0":[], // player 0
-		"1":[], // player 1
-		"emptyPoly0": [],
-		"emptyPoly1": []
+	polygons: {
+		0:[], // player 0
+		1:[], // player 1
+		emptyPoly0: [],
+		emptyPoly1: []
 	}
 }
 
@@ -56,7 +57,9 @@ export default function dots(state = initialState, action) {
 
 		case constants.SET_PLAYER: {
 
-			return { ...state, currentMove: action.payload.move};
+			console.log(action.payload)
+
+			return Object.assign({}, state, action.payload);
 		}
 		
 		default : { return state }

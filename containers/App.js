@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import GameFieldContainer from "./GameFieldContainer";
-import SetAreaSizeContainer from "./SetAreaSizeContainer";
+import SetFieldSizeContainer from "./SetFieldSizeContainer";
 import SetGameContainer from "./SetGameContainer";
 
 class App extends Component{
@@ -9,7 +9,7 @@ class App extends Component{
 
 		return (
 			<div>
-				<SetAreaSizeContainer /> {/* <gameField> -- container*/}
+				<SetFieldSizeContainer /> {/* <gameField> -- container*/}
 				<GameFieldContainer /> {/* <form choose size> -- container*/}			
 				<SetGameContainer /> {/* <textarea for json> -- container*/}
 			</div>

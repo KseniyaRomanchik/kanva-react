@@ -20,7 +20,7 @@ class GameFieldContainer extends Component{
 					timer={ this.props.size.timer }  
 					step={ this.props.step }
 					setNewDotProperty={ this.props.setNewDotProperty }
-					move={this.props.move}
+					currentMove={this.props.currentMove}
 					/>
 			</div>
 		)
@@ -32,7 +32,7 @@ function mapStateToProps (state) {
 	return {
 		dots: state.dots.dots,
 		size: state.dots.fieldSize,
-		move: state.dots.currentMove,
+		currentMove: state.dots.currentMove,
 		step: state.dots.fieldSize.step
 	}
 }

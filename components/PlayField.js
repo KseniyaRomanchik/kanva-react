@@ -29,19 +29,6 @@ export default class PlayField extends Component {
 		// this.props.dots["id-0-1"].color = 1;
 	}
 
-	playerTimer(){
-
-		this.timer = setTimeout(() => {
-			
-			this.props.setPlayer({ 
-				move : { 
-					player: this.props.move.player ? 0 : 1, 
-					clickedDot: {}
-				}
-			});
-		}, this.props.timer);
-	}
-
 	identyPlayer(e){
 
 		let id = `id-${ (e.target.attrs.x + this.props.step/2) / this.props.step }-${ (e.target.attrs.y + this.props.step/2) / this.props.step }`;
@@ -49,22 +36,20 @@ export default class PlayField extends Component {
 		if(this.props.dots[id].color === ""){	
 
 			let dotid = this.props.dots[id];
-			dotid.color = this.props.move.player;			
+			dotid.color = this.props.currentMove.player;			
 			dotid.d = 0; 
 			this.props.setNewDotProperty(dotid, id);
 			this.props.setPlayer({ 
-				move : { 
-					player: this.props.move.player ? 0 : 1, 
-					clickedDot: dotid
+				currentMove : { 
+					player: this.props.currentMove.player ? 0 : 1, 
+					clickedDot: dotid,
+					timer: this.props.timer
 				}
 			});		
 		}		
 	}
 
 	render(){
-		// console.log(this.props.dots["id-0-0"])
-		clearTimeout(this.timer);
-		this.playerTimer();
 		let dots = [],
 			cells = [],
 			i = 0;
@@ -89,8 +74,15 @@ export default class PlayField extends Component {
 
 		return (
 			<div>
-				<h1><span className={ "player" + this.props.move.player }>Player { this.props.move.player }</span> move</h1>
-				<Stage width={ this.props.width } height={ this.props.height } x={this.props.step/2} y={this.props.step/2}>
+				<h1>
+					<span className={ "player" + this.props.currentMove.player }>
+						Player { this.props.currentMove.player }
+					</span> move
+				</h1>
+				<Stage width={ this.props.width } 
+						height={ this.props.height } 
+						x={this.props.step/2} 
+						y={this.props.step/2}>
 						<Layer  className="Dots">
 							{ dots }
 							{ cells }													

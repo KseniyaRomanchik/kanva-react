@@ -39,11 +39,11 @@ export function setPlayer(move) {
 	}
 }
 
-export function setEmptyPolygon(move) {
+export function setEmptyPolygon(polyArr) {
 
 	return {
 		type: constants.SET_EMPTY_POLYGON,
-		payload: move
+		payload: polyArr
 	}
 }
 
@@ -63,7 +63,7 @@ function setFieldAction(fieldData) {
 	}
 }
 
-export function setFieldSize(width, height, step, timer = 1 * 60 * 1000) {
+export function setFieldSize(width, height, step, timer = 0.2 * 60 * 1000) {
 
 	let dots = GameFieldService.setField(width, height, step);
 
@@ -78,14 +78,15 @@ export function setFieldSize(width, height, step, timer = 1 * 60 * 1000) {
 				timer
 			},
 			polygons:{
-				"0":[],
-				"1":[], 
-				"emptyPoly0": [],
-				"emptyPoly1": []
+				0:[],
+				1:[], 
+				emptyPoly0: [],
+				emptyPoly1: []
 			},
-			"currentMove": {
-				"player": 0,
-				"clickedDot": {}
+			currentMove: {
+				player: 0,
+				clickedDot: {},
+				timer: timer
 			}
 		}));
 	}
